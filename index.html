@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home_Page</title>
+    <link rel="stylesheet" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <source />
+  </head>
+  <body>
+    <!-- navbar-section -->
+    <nav id="nav_section"></nav>
+    <!-- hero section -->
+    <section id="Hero_Section">
+      <video autoplay muted loop playsinline>
+        <source
+          src="/images/homeImg/Gym cinematic promotion video.publer.com.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      <div class="hero-content">
+        <h2 class="fade-up">Transform Your Body, Transform Your Life</h2>
+
+        <p class="fade-up">
+          Join our fitness community and achieve your goals with expert
+          trainers, personalized workout plans, and state-of-the-art equipment.
+          Start your fitness journey today. Whether you're a beginner or an
+          athlete, our gym provides the training, guidance, and motivation you
+          need to become the best version of yourself.Discover workout plans,
+          expert guidance, and nutrition tips designed for beginners,
+          intermediate, and advanced fitness enthusiasts. Take the first step
+          toward a healthier lifestyle.
+        </p>
+        <button class="fade-up">Join Now</button>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features_Section">
+      <h2>Why Choose Us?</h2>
+      <p>
+        We provide everything you need to achieve your fitness goals in a
+        motivating and professional environment.
+      </p>
+
+      <div class="cards fade-up">
+        <div>
+          <img
+            src="/images/homeImg/Modern Equipments.jpg"
+            alt="image not found"
+          />
+          <h3>Modern Equipment</h3>
+          <p>
+            Train with the latest fitness machines and high-quality equipment
+            designed to maximize your performance and results.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="/images/homeImg/Expert Trainers.jpg"
+            alt="image not found"
+          />
+          <h3>Expert Trainers</h3>
+          <p>
+            Get guidance from certified fitness professionals who create
+            personalized workout plans and support your progress.
+          </p>
+        </div>
+
+        <div>
+          <img
+            src="/images/homeImg/Flexible Timing.jpg"
+            alt="image not found"
+          />
+          <h3>Flexible Timing</h3>
+          <p>
+            Work out at your convenience with flexible gym hours that fit
+            perfectly into your daily schedule.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership section -->
+    <section id="membership_section">
+      <div class="membership_header">
+        <h2>Choose Your Membership Plan</h2>
+        <p>Select the perfect fitness plan for your goals</p>
+      </div>
+
+      <div class="membership_card">
+        <!-- Basic Plan -->
+        <div class="plan-card basic">
+          <h3>Basic Plan</h3>
+
+          <select class="plan-duration">
+            <option value="999">1 Month - ₹999</option>
+            <option value="2699">3 Months - ₹2699</option>
+            <option value="4999">6 Months - ₹4999</option>
+            <option value="8392">1 Year - ₹8392 (30% OFF)</option>
+          </select>
+
+          <h4 class="price">₹999</h4>
+
+          <ul>
+            <li>✔ Gym Access</li>
+            <li>✔ Locker Facility</li>
+            <li>✔ Cardio Area Access</li>
+            <li>✔ Free WiFi</li>
+          </ul>
+
+          <button class="choose-btn">Choose Basic</button>
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="plan-card standard">
+          <span class="badge">Most Popular</span>
+
+          <h3>Standard Plan</h3>
+
+          <select class="plan-duration">
+            <option value="1999">1 Month - ₹1999</option>
+            <option value="5399">3 Months - ₹5399</option>
+            <option value="9999">6 Months - ₹9999</option>
+            <option value="16792">1 Year - ₹16792 (30% OFF)</option>
+          </select>
+
+          <h4 class="price">₹1999</h4>
+
+          <ul>
+            <li>✔ Group Classes</li>
+            <li>✔ Workout Plan</li>
+            <li>✔ Nutrition Guide</li>
+            <li>✔ Locker Facility</li>
+          </ul>
+
+          <button class="choose-btn">Choose Standard</button>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="plan-card premium">
+          <h3>Premium Plan</h3>
+
+          <select class="plan-duration">
+            <option value="2999">1 Month - ₹2999</option>
+            <option value="8099">3 Months - ₹8099</option>
+            <option value="14999">6 Months - ₹14999</option>
+            <option value="25192">1 Year - ₹25192 (30% OFF)</option>
+          </select>
+
+          <h4 class="price">₹2999</h4>
+
+          <ul>
+            <li>✔ Personal Trainer</li>
+            <li>✔ Diet Plan</li>
+            <li>✔ Body Assessment</li>
+            <li>✔ Priority Support</li>
+            <li>✔ Premium Equipment Access</li>
+          </ul>
+
+          <button class="choose-btn">Choose Premium</button>
+        </div>
+      </div>
+      <!-- Membership Popup -->
+
+      <div id="membershipModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+
+          <h2>Membership Registration</h2>
+
+          <form id="membershipForm">
+            <input type="text" placeholder="Full Name" required />
+
+            <input type="email" placeholder="Email Address" required />
+
+            <input type="tel" placeholder="Mobile Number" required />
+
+            <input type="text" id="selectedPlan" readonly />
+
+            <input type="text" id="selectedAmount" readonly />
+
+            <button type="submit" id="payBtn">Proceed To Payment</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section  -->
+    <footer class="fade-up">
+      <div>
+        <h3>FitZone Gym</h3>
+        <p>Helping people achieve their fitness goals.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Workouts</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact Info</h3>
+        <p>📍 Vemaplli,Andhra pradesh</p>
+        <p>📞 +91 7075756279</p>
+        <p>✉️ fittnessgym@gmail.com</p>
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <p>Facebook</p>
+        <p>Instagram</p>
+        <p>YouTube</p>
+      </div>
+
+      <hr />
+
+      <p>© 2026 FitZone Gym. All Rights Reserved.</p>
+    </footer>
+
+    <script src="home.js"></script>
+    <script>
+      // Fetch and inject the navbar
+      fetch("../nav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav_section").innerHTML = data;
+        });
+
+      // Your mobile menu toggle function
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        // Because elements are injected dynamically, ensure the script finds them safely
+        if (navLinks) {
+          navLinks.classList.toggle("active");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+}
+
+.strength-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.strength-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.strength-section p {
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+.level-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.level-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #1e293b;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.level-btn:hover {
+  background: #334155;
+}
+
+.level-btn.active {
+  background: #ef4444;
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.exercise-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.exercise-card:hover {
+  transform: translateY(-8px);
+  border: 1px solid #ef4444;
+}
+
+.exercise-card h3 {
+  margin-bottom: 10px;
+}
+
+.exercise-card p {
+  color: #cbd5e1;
+  font-size: 14px;
+}

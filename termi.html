@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permanent Client Testimonials</title>
+    <style>
+      /* --- CSS STYLING --- */
+      :root {
+        --primary-color: #4f46e5;
+        --primary-hover: #4338ca;
+        --text-color: #1f2937;
+        --bg-color: #f3f4f6;
+        --card-bg: #ffffff;
+        --star-color: #fbbf24;
+        --border-color: #e5e7eb;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 650px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .form-section,
+      .reviews-section {
+        background-color: var(--card-bg);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        margin-top: 0;
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+      }
+
+      input[type="text"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: 0.95rem;
+      }
+
+      textarea {
+        resize: vertical;
+        height: 100px;
+      }
+
+      button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.2s;
+      }
+
+      button:hover {
+        background-color: var(--primary-hover);
+      }
+
+      .client-reviews {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .review-card {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 15px;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      .review-card:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .review-text {
+        font-style: italic;
+        margin: 0 0 10px 0;
+        line-height: 1.5;
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .client-name {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .ratings {
+        color: var(--star-color);
+        font-size: 1.1rem;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="form-section">
+        <h2>Leave a Review</h2>
+        <form id="reviewForm">
+          <div class="form-group">
+            <label for="clientName">Your Name</label>
+            <input
+              type="text"
+              id="clientName"
+              placeholder="e.g. John Doe"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="clientRating">Rating</label>
+            <select id="clientRating" required>
+              <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
+              <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
+              <option value="3">⭐⭐⭐ (3 Stars)</option>
+              <option value="2">⭐⭐ (2 Stars)</option>
+              <option value="1">⭐ (1 Star)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="clientText">Your Review</label>
+            <textarea
+              id="clientText"
+              placeholder="Share your experience with us..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit">Submit Review</button>
+        </form>
+      </section>
+
+      <section class="reviews-section">
+        <h2>Client Reviews & Ratings</h2>
+        <div class="client-reviews" id="reviewsContainer"></div>
+      </section>
+    </div>
+
+    <script>
+      const reviewsContainer = document.getElementById("reviewsContainer");
+      const reviewForm = document.getElementById("reviewForm");
+
+      // 1. Load reviews from localStorage on page startup. If none exist, use default array.
+      let savedReviews = JSON.parse(localStorage.getItem("clientReviews"));
+
+      if (!savedReviews) {
+        savedReviews = [
+          {
+            name: "Sarah J.",
+            text: "Absolutely loved the service! Very prompt and professional.",
+            rating: 5,
+          },
+          {
+            name: "Mike D.",
+            text: "Good quality output, would highly recommend to others.",
+            rating: 4,
+          },
+        ];
+        // Save initial defaults to storage
+        localStorage.setItem("clientReviews", JSON.stringify(savedReviews));
+      }
+
+      // Helper function to convert numbers to stars
+      function generateStars(rating) {
+        return "★".repeat(rating) + "☆".repeat(5 - rating);
+      }
+
+      // Function to render a single review card to UI
+      function renderReview(name, text, rating) {
+        const card = document.createElement("div");
+        card.classList.add("review-card");
+
+        card.innerHTML = `
+                <p class="review-text">"${text}"</p>
+                <div class="card-footer">
+                    <span class="client-name">- ${name}</span>
+                    <div class="ratings">${generateStars(parseInt(rating))}</div>
+                </div>
+            `;
+
+        // Newest reviews at the top
+        reviewsContainer.prepend(card);
+      }
+
+      // 2. Loop through our saved list and render them
+      function loadAllReviews() {
+        reviewsContainer.innerHTML = ""; // Clear container
+        savedReviews.forEach((rev) =>
+          renderReview(rev.name, rev.text, rev.rating),
+        );
+      }
+
+      // Load data on page launch
+      loadAllReviews();
+
+      // 3. Form Submission Event Listener
+      reviewForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nameInput = document.getElementById("clientName").value;
+        const ratingInput = parseInt(
+          document.getElementById("clientRating").value,
+        );
+        const textInput = document.getElementById("clientText").value;
+
+        // Create a new review object
+        const newReview = {
+          name: nameInput,
+          text: textInput,
+          rating: ratingInput,
+        };
+
+        // Push new review to our working array
+        savedReviews.push(newReview);
+
+        // SAVE UPDATE TO LOCALSTORAGE (Turn array into a string)
+        localStorage.setItem("clientReviews", JSON.stringify(savedReviews));
+
+        // Instantly render the new review
+        renderReview(nameInput, textInput, ratingInput);
+
+        // Reset form
+        reviewForm.reset();
+      });
+    </script>
+  </body>
+</html>

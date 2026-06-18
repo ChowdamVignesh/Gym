@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="../nav.css" />
+    <!-- Font Awesome for Social Media Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- navbar-section -->
+    <nav id="nav_section"></nav>
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>
+          Have questions, feedback, or a project in mind? reach out to us, and
+          we'll get back to you as soon as possible.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Contact Section -->
+    <main class="contact-section container">
+      <!-- Contact Form (Left Side) -->
+      <section class="contact-form-container">
+        <h2>Send a Message</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Your full name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Your email address"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Your phone number (optional)"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="How can we help you?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Message</button>
+        </form>
+      </section>
+
+      <!-- Contact Details (Right Side) -->
+      <section class="contact-details-container">
+        <h2>Get in Touch</h2>
+        <div class="details-list">
+          <div class="detail-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>Address</h3>
+              <p>123 Tech Avenue, Suite 500<br />Silicon Valley, CA 94025</p>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h3>Working Hours</h3>
+              <p>
+                Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday - Sunday:
+                Closed
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Google Map Section -->
+    <section class="map-section">
+      <!-- Replace the src URL with your actual Google Maps embed link if needed -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.6282365452654!2d-122.08385108469223!3d37.42199997982519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba02425dad8f%3A0x6c296c66619367e0!2sGoogleplex!5e0!3m2!1sen!2sus!4v1625619523451!5m2!1sen!2sus"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+      >
+      </iframe>
+    </section>
+
+    <!-- Footer / Social Media Links -->
+    <footer class="social-footer">
+      <div class="container">
+        <h3>Connect with Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook" class="social-icon"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="X (Twitter)" class="social-icon"
+            ><i class="fab fa-x-twitter"></i
+          ></a>
+          <a href="#" aria-label="LinkedIn" class="social-icon"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="#" aria-label="GitHub" class="social-icon"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="#" aria-label="Instagram" class="social-icon"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <p class="copyright">&copy; 2026 Your Company. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      // Fetch and inject the navbar
+      fetch("../nav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav_section").innerHTML = data;
+        });
+
+      // Your mobile menu toggle function
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        // Because elements are injected dynamically, ensure the script finds them safely
+        if (navLinks) {
+          navLinks.classList.toggle("active");
+        }
+      }
+    </script>
+  </body>
+</html>

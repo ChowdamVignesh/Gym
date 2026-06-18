@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="strength.css" />
+  </head>
+  <body>
+    <section class="strength-section">
+      <h2>💪 Strength Training Exercises</h2>
+      <p>Select your training level to view recommended strength workouts.</p>
+
+      <div class="level-buttons">
+        <button class="level-btn active" data-level="beginner">Beginner</button>
+        <button class="level-btn" data-level="intermediate">
+          Intermediate
+        </button>
+        <button class="level-btn" data-level="advanced">Advanced</button>
+      </div>
+
+      <div id="exerciseContainer" class="exercise-grid"></div>
+    </section>
+    <script src="strength.js"></script>
+  </body>
+</html>

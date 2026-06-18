@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet Our Trainers</title>
+    <link rel="stylesheet" href="trainers.css" />
+    <link rel="stylesheet" href="../nav.css" />
+    <!-- Font Awesome for Social Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- navbar-section -->
+    <nav id="nav_section"></nav>
+    <!-- Header Section -->
+    <header class="header-section">
+      <h1>Meet Our Trainers</h1>
+      <p>
+        Our certified experts are here to help you reach your ultimate fitness
+        and health goals.
+      </p>
+    </header>
+
+    <!-- Trainers Grid -->
+    <main class="trainers-grid">
+      <!-- Trainer Card 1 -->
+      <div class="trainer-card" onclick="openModal('trainer1')">
+        <img
+          src="/images/Trainers/yaswanth(1).png"
+          alt="Yaswanth"
+          class="trainer-img"
+        />
+        <div class="trainer-info">
+          <h3>Yaswanth</h3>
+          <p class="specialization">Strength & Conditioning</p>
+          <p class="experience"><strong>Experience:</strong>30 + 2 Years</p>
+        </div>
+      </div>
+
+      <!-- Trainer Card 2 -->
+      <div class="trainer-card" onclick="openModal('trainer2')">
+        <img
+          src="/images/Trainers/Vignesh(1).png"
+          alt="Vignesh"
+          class="trainer-img"
+        />
+        <div class="trainer-info">
+          <h3>Vignesh</h3>
+          <p class="specialization">High-Intensity Interval Training (HIIT)</p>
+          <p class="experience"><strong>Experience:</strong> 10 Years</p>
+        </div>
+      </div>
+
+      <!-- Trainer Card 3 -->
+      <div class="trainer-card" onclick="openModal('trainer3')">
+        <img
+          src="/images/Trainers/rohith(2).png"
+          alt="Rohith"
+          class="trainer-img"
+        />
+        <div class="trainer-info">
+          <h3>Rohith</h3>
+          <p class="specialization">Zumba Trainer</p>
+          <p class="experience"><strong>Experience:</strong> 9 Years</p>
+        </div>
+      </div>
+
+      <!-- Trainer Card 3 -->
+      <div class="trainer-card" onclick="openModal('trainer4')">
+        <img
+          src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400"
+          alt="Marcus Chen"
+          class="trainer-img"
+        />
+        <div class="trainer-info">
+          <h3>Marcus Chen</h3>
+          <p class="specialization">High-Intensity Interval Training (HIIT)</p>
+          <p class="experience"><strong>Experience:</strong> 5 Years</p>
+        </div>
+      </div>
+
+      <!-- Trainer Card 3 -->
+      <div class="trainer-card" onclick="openModal('trainer5')">
+        <img
+          src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400"
+          alt="Marcus Chen"
+          class="trainer-img"
+        />
+        <div class="trainer-info">
+          <h3>Marcus Chen</h3>
+          <p class="specialization">High-Intensity Interval Training (HIIT)</p>
+          <p class="experience"><strong>Experience:</strong> 5 Years</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Fitness Elite. All rights reserved.</p>
+    </footer>
+
+    <!-- Pop-up Modal Container -->
+    <div id="trainerModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalDetails">
+          <!-- Data will be dynamically injected by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <script src="trainers.js"></script>
+    <script>
+      // Fetch and inject the navbar
+      fetch("../nav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav_section").innerHTML = data;
+        });
+
+      // Your mobile menu toggle function
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        // Because elements are injected dynamically, ensure the script finds them safely
+        if (navLinks) {
+          navLinks.classList.toggle("active");
+        }
+      }
+    </script>
+  </body>
+</html>

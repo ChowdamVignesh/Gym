@@ -1,0 +1,140 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* Section */
+.crossfit-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.crossfit-section h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.crossfit-section p {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+/* Level Buttons */
+.level-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.level-btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  background: #1e293b;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.level-btn:hover {
+  background: #334155;
+  transform: translateY(-2px);
+}
+
+/* Active Button */
+.level-btn.active {
+  background: #ef4444;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+}
+
+/* Exercise Grid */
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Exercise Card */
+.exercise-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+  text-align: left;
+}
+
+.exercise-card:hover {
+  transform: translateY(-8px);
+  border-color: #ef4444;
+}
+
+/* Exercise Name */
+.exercise-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+/* Exercise Benefit */
+.exercise-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Watch Demo Button */
+.exercise-card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #ef4444;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.exercise-card button:hover {
+  background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .crossfit-section h2 {
+    font-size: 2.2rem;
+  }
+
+  .level-buttons {
+    gap: 10px;
+  }
+
+  .level-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .exercise-card {
+    padding: 20px;
+  }
+}

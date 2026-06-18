@@ -1,0 +1,201 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7f6;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: white;
+}
+
+.header-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Grid Layout */
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  flex-grow: 1;
+}
+
+/* Trainer Cards */
+.trainer-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.trainer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.trainer-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.trainer-img .img1 {
+  align-items: center;
+  
+}
+
+.trainer-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.trainer-info h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.specialization {
+  color: #3498db;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.experience {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #2c3e50;
+  color: white;
+  margin-top: auto;
+}
+
+/* --- POP-UP MODAL --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+  text-align: center;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Inside Modal Styling */
+.modal-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid #3498db;
+}
+
+.modal-details h2 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.modal-certifications {
+  background: #f8f9fa;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  border-left: 4px solid #2ecc71;
+  text-align: left;
+}
+
+.contact-btn {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-btn:hover {
+  background-color: #2980b9;
+}
+
+.social-links a {
+  color: #7f8c8d;
+  font-size: 1.3rem;
+  margin: 0 10px;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #3498db;
+}

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="program.css" />
+    <link rel="stylesheet" href="../nav.css" />
+  </head>
+  <body>
+    <!-- navbar-section -->
+    <nav id="nav_section"></nav>
+    <div class="overlay"></div>
+    <section class="programs">
+      <!-- Weight Training -->
+      <div class="program-card red">
+        <div class="program-content">
+          <div class="program-icon">🏋️</div>
+
+          <div class="program-text">
+            <h2>WEIGHT TRAINING</h2>
+            <p>
+              Build muscle mass, improve body composition, and increase overall
+              strength through structured resistance exercises.
+            </p>
+            <button class="btn1">
+              <a href="/Programs/weight_training/weight.html">Visit</a>
+            </button>
+          </div>
+        </div>
+
+        <div class="divider red"></div>
+
+        <div class="program-image">
+          <img
+            src="/images/programImg/Weight_Training.jpg"
+            alt="Weight Training"
+          />
+        </div>
+      </div>
+
+      <!-- Cardio -->
+      <div class="program-card blue">
+        <div class="program-content">
+          <div class="program-icon">🏃</div>
+
+          <div class="program-text">
+            <h2>CARDIO TRAINING</h2>
+            <p>
+              Enhance cardiovascular health, endurance, and calorie burning with
+              activities such as running, cycling, and HIIT workouts.
+            </p>
+            <button class="btn2">
+              <a href="/Programs/cardio_training/cardio.html">Visit</a>
+            </button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="program-image">
+          <img
+            src="/images/programImg/Cardio_Training.jpeg"
+            alt="Cardio Training"
+          />
+        </div>
+      </div>
+
+      <!-- Strength -->
+      <div class="program-card green">
+        <div class="program-content">
+          <div class="program-icon">💪</div>
+
+          <div class="program-text">
+            <h2>STRENGTH TRAINING</h2>
+            <p>
+              Focus on increasing functional strength, power, and performance
+              using progressive resistance techniques.
+            </p>
+            <button class="btn3">
+              <a href="/Programs/strength_training/strength.html">Visit</a>
+            </button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="program-image">
+          <img
+            src="/images/programImg/Strength_Training.webp"
+            alt="Strength Training"
+          />
+        </div>
+      </div>
+
+      <!-- Yoga -->
+      <div class="program-card purple">
+        <div class="program-content">
+          <div class="program-icon">🧘</div>
+
+          <div class="program-text">
+            <h2>YOGA CLASSES</h2>
+            <p>
+              Improve flexibility, balance, mobility, and mental well-being
+              through guided yoga sessions.
+            </p>
+            <button class="btn4">
+              <a href="/Programs/yoga/yoga.html">Visit</a>
+            </button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="program-image">
+          <img src="/images/programImg/yoga.jpg" alt="Yoga Classes" />
+        </div>
+      </div>
+
+      <!-- CrossFit -->
+      <div class="program-card orange">
+        <div class="program-content">
+          <div class="program-icon">🏋️‍♀️</div>
+
+          <div class="program-text">
+            <h2>CROSSFIT</h2>
+            <p>
+              Participate in high-intensity functional workouts that combine
+              strength, endurance, agility, and conditioning.
+            </p>
+            <button class="btn5">
+              <a href="/Programs/crossfit/crossfit.html">Visit</a>
+            </button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="program-image">
+          <img src="/images/programImg/CrossFit.avif" alt="CrossFit" />
+        </div>
+      </div>
+    </section>
+    <script>
+      // Fetch and inject the navbar
+      fetch("../nav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav_section").innerHTML = data;
+        });
+
+      // Your mobile menu toggle function
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        // Because elements are injected dynamically, ensure the script finds them safely
+        if (navLinks) {
+          navLinks.classList.toggle("active");
+        }
+      }
+    </script>
+  </body>
+</html>
