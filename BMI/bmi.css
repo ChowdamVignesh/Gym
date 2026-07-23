@@ -1,0 +1,3407 @@
+/*==================================================
+        PREMIUM BMI REPORT UI
+        PART 2A-2A-1
+        Global Variables + Reset
+        Glassmorphism Foundation
+==================================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  /*========== Colors ==========*/
+
+  --primary: #2563eb;
+  --primary-light: #60a5fa;
+  --primary-dark: #1d4ed8;
+
+  --secondary: #06b6d4;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --purple: #7c3aed;
+
+  --white: #ffffff;
+  --light: #f8fafc;
+  --gray: #64748b;
+  --border: #dbe4ee;
+
+  --text: #0f172a;
+  --text-light: #475569;
+
+  /*========== Gradients ==========*/
+
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #2563eb 100%);
+
+  --card-gradient: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.65)
+  );
+
+  --blue-gradient: linear-gradient(135deg, #2563eb, #38bdf8);
+
+  --green-gradient: linear-gradient(135deg, #16a34a, #22c55e);
+
+  --orange-gradient: linear-gradient(135deg, #f59e0b, #fb923c);
+
+  --red-gradient: linear-gradient(135deg, #ef4444, #dc2626);
+
+  /*========== Radius ==========*/
+
+  --radius-xs: 10px;
+  --radius-sm: 14px;
+  --radius-md: 18px;
+  --radius-lg: 25px;
+  --radius-xl: 35px;
+
+  /*========== Shadows ==========*/
+
+  --shadow-sm: 0 8px 18px rgba(15, 23, 42, 0.08);
+
+  --shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+
+  --shadow-lg: 0 25px 60px rgba(15, 23, 42, 0.18);
+
+  /*========== Glass Effect ==========*/
+
+  --glass-bg: rgba(255, 255, 255, 0.3);
+
+  --glass-border: rgba(255, 255, 255, 0.45);
+
+  --blur: 18px;
+
+  /*========== Animation ==========*/
+
+  --transition: 0.35s ease;
+}
+
+/*==================================================
+                RESET
+==================================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: "Poppins", sans-serif;
+
+  background: var(--bg-gradient);
+
+  color: var(--text);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  padding: 45px;
+
+  overflow-x: hidden;
+
+  position: relative;
+}
+
+/*==================================================
+          BACKGROUND DECORATION
+==================================================*/
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  width: 420px;
+
+  height: 420px;
+
+  background: #3b82f6;
+
+  border-radius: 50%;
+
+  filter: blur(170px);
+
+  opacity: 0.22;
+
+  top: -120px;
+
+  left: -120px;
+
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 450px;
+
+  height: 450px;
+
+  background: #06b6d4;
+
+  border-radius: 50%;
+
+  filter: blur(170px);
+
+  opacity: 0.18;
+
+  bottom: -140px;
+
+  right: -120px;
+
+  z-index: -2;
+}
+
+/*==================================================
+              MAIN CONTAINER
+==================================================*/
+
+.container {
+  width: 1200px;
+
+  max-width: 100%;
+
+  position: relative;
+}
+.container {
+  /* width: 900px; */
+
+  /* max-width: 100%; */
+
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  text-align: center;
+
+  margin-bottom: 25px;
+
+  color: #2563eb;
+}
+
+.form {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 18px;
+}
+
+.input-box {
+  display: flex;
+
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+
+  font-weight: 600;
+}
+
+input,
+select {
+  padding: 13px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+}
+
+button {
+  margin-top: 25px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/*==================================================
+        PREMIUM GLASSMORPHISM REPORT
+==================================================*/
+
+.premium-report {
+  width: 100%;
+
+  margin-top: 35px;
+
+  padding: 40px;
+
+  border-radius: 30px;
+
+  background: var(--glass-bg);
+
+  backdrop-filter: blur(var(--blur));
+
+  -webkit-backdrop-filter: blur(var(--blur));
+
+  border: 1px solid var(--glass-border);
+
+  box-shadow: var(--shadow-lg);
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* Decorative shine */
+
+.premium-report::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.18),
+    transparent 35%
+  );
+
+  pointer-events: none;
+}
+
+.premium-report::after {
+  content: "";
+
+  position: absolute;
+
+  top: -60%;
+
+  right: -18%;
+
+  width: 280px;
+
+  height: 280px;
+
+  background: rgba(59, 130, 246, 0.08);
+
+  border-radius: 50%;
+
+  filter: blur(40px);
+
+  pointer-events: none;
+}
+
+/*==================================================
+             COMMON SECTION STYLE
+==================================================*/
+
+.report-section {
+  background: var(--card-gradient);
+
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 22px;
+
+  padding: 28px;
+
+  margin-bottom: 28px;
+
+  box-shadow: var(--shadow);
+
+  transition: var(--transition);
+}
+
+.report-section:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 20px 45px rgba(37, 99, 235, 0.18);
+}
+/*==================================================
+      PART 2A-2A-2
+      REPORT LAYOUT • TYPOGRAPHY • CARDS • GRIDS
+==================================================*/
+
+/*========================
+      REPORT HEADER
+=========================*/
+
+.report-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 35px;
+
+  padding: 25px 30px;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.12),
+    rgba(6, 182, 212, 0.08)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  box-shadow: var(--shadow-sm);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.report-header::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+
+  height: 220px;
+
+  right: -80px;
+
+  top: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.header-text {
+  flex: 1;
+
+  z-index: 2;
+}
+
+.header-text h2 {
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  color: var(--text);
+
+  margin-bottom: 8px;
+
+  letter-spacing: 0.5px;
+}
+
+.header-text p {
+  font-size: 0.96rem;
+
+  color: var(--gray);
+
+  line-height: 1.7;
+}
+
+.logo-circle {
+  width: 90px;
+
+  height: 90px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--blue-gradient);
+
+  color: #fff;
+
+  font-size: 2.3rem;
+
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.35);
+
+  flex-shrink: 0;
+}
+
+/*========================
+      SECTION TITLE
+=========================*/
+
+.report-section h3 {
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  color: var(--primary-dark);
+
+  margin-bottom: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.report-section h3::before {
+  content: "";
+
+  width: 8px;
+
+  height: 26px;
+
+  border-radius: 30px;
+
+  background: var(--blue-gradient);
+}
+
+/*========================
+      INFO GRID
+=========================*/
+
+.info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+  gap: 20px;
+}
+
+.info-card {
+  background: #fff;
+
+  border-radius: 20px;
+
+  padding: 22px;
+
+  text-align: center;
+
+  border: 1px solid rgba(37, 99, 235, 0.08);
+
+  transition: var(--transition);
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.info-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), transparent);
+
+  opacity: 0;
+
+  transition: 0.35s;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.15);
+}
+
+.info-card:hover::before {
+  opacity: 1;
+}
+
+.info-card span {
+  display: block;
+
+  font-size: 0.85rem;
+
+  color: var(--gray);
+
+  margin-bottom: 10px;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.info-card h4 {
+  font-size: 1.15rem;
+
+  color: var(--text);
+
+  font-weight: 700;
+
+  word-break: break-word;
+}
+
+/*========================
+      METRIC GRID
+=========================*/
+
+.metrics-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 22px;
+}
+
+.metric {
+  background: #fff;
+
+  border-radius: 22px;
+
+  padding: 24px;
+
+  text-align: center;
+
+  border: 1px solid rgba(37, 99, 235, 0.08);
+
+  transition: var(--transition);
+
+  box-shadow: var(--shadow-sm);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.metric::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 4px;
+
+  background: var(--blue-gradient);
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: 0.35s;
+}
+
+.metric:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.15);
+}
+
+.metric:hover::after {
+  transform: scaleX(1);
+}
+
+.metric span {
+  display: block;
+
+  color: var(--gray);
+
+  font-size: 0.88rem;
+
+  font-weight: 500;
+
+  margin-bottom: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+.metric h4 {
+  font-size: 1.45rem;
+
+  font-weight: 700;
+
+  color: var(--primary);
+
+  line-height: 1.4;
+
+  word-break: break-word;
+}
+
+/*========================
+     TWO COLUMN LAYOUT
+=========================*/
+
+.dual-layout {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 28px;
+
+  align-items: stretch;
+}
+
+.metric-card {
+  background: #fff;
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  border: 1px solid rgba(37, 99, 235, 0.08);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.metric-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 20px 45px rgba(37, 99, 235, 0.16);
+}
+
+.metric-card h2 {
+  font-size: 2rem;
+
+  color: var(--primary);
+
+  margin: 18px 0;
+
+  font-weight: 700;
+}
+
+.metric-card p {
+  color: var(--gray);
+
+  font-size: 0.95rem;
+
+  margin-top: 15px;
+
+  line-height: 1.6;
+}
+
+/*========================
+      ADVICE BOX
+=========================*/
+
+.advice-box {
+  background: linear-gradient(
+    135deg,
+    rgba(22, 163, 74, 0.08),
+    rgba(34, 197, 94, 0.04)
+  );
+
+  border-left: 6px solid var(--success);
+
+  border-radius: 18px;
+
+  padding: 25px;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  color: var(--text-light);
+
+  box-shadow: var(--shadow-sm);
+}
+/*==================================================
+      PART 2A-2A-3
+      RESPONSIVE DESIGN
+      FINAL LAYOUT POLISH
+==================================================*/
+
+/*========================
+      LARGE SCREENS
+=========================*/
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+
+    padding: 0 20px;
+  }
+
+  .premium-report {
+    padding: 35px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/*========================
+        TABLETS
+=========================*/
+
+@media (max-width: 992px) {
+  body {
+    padding: 30px 18px;
+  }
+
+  .premium-report {
+    padding: 28px;
+  }
+
+  .report-header {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 30px 20px;
+  }
+
+  .header-text {
+    order: 2;
+  }
+
+  .hospital-logo {
+    order: 1;
+  }
+
+  .logo-circle {
+    margin: auto;
+  }
+
+  .header-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .dual-layout {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*========================
+      MOBILE DEVICES
+=========================*/
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .premium-report {
+    padding: 20px;
+  }
+
+  .report-section {
+    padding: 20px;
+  }
+
+  .header-text h2 {
+    font-size: 1.55rem;
+
+    line-height: 1.35;
+  }
+
+  .header-text p {
+    font-size: 0.9rem;
+  }
+
+  .logo-circle {
+    width: 75px;
+
+    height: 75px;
+
+    font-size: 2rem;
+  }
+
+  .info-grid,
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-card {
+    padding: 24px;
+  }
+
+  .metric h4 {
+    font-size: 1.25rem;
+  }
+
+  .report-section h3 {
+    font-size: 1.08rem;
+  }
+}
+
+/*========================
+      SMALL PHONES
+=========================*/
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px 10px;
+  }
+
+  .premium-report {
+    padding: 16px;
+
+    border-radius: 20px;
+  }
+
+  .report-header {
+    padding: 20px 15px;
+
+    border-radius: 18px;
+  }
+
+  .logo-circle {
+    width: 65px;
+
+    height: 65px;
+
+    font-size: 1.7rem;
+  }
+
+  .header-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .header-text p {
+    font-size: 0.82rem;
+  }
+
+  .info-card,
+  .metric,
+  .metric-card {
+    padding: 18px;
+  }
+
+  .info-card h4 {
+    font-size: 1rem;
+  }
+
+  .metric h4 {
+    font-size: 1.1rem;
+  }
+
+  .metric-card h2 {
+    font-size: 1.65rem;
+  }
+
+  .advice-box {
+    padding: 18px;
+
+    font-size: 0.92rem;
+  }
+}
+
+/*========================
+      PREMIUM SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2563eb, #38bdf8);
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1d4ed8, #0ea5e9);
+}
+
+/*========================
+      TEXT SELECTION
+=========================*/
+
+::selection {
+  background: #2563eb;
+
+  color: #fff;
+}
+
+/*========================
+      SMOOTH TRANSITIONS
+=========================*/
+
+.info-card,
+.metric,
+.metric-card,
+.report-section,
+button {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/*========================
+      FADE-IN ANIMATION
+=========================*/
+
+.premium-report {
+  animation: reportFade 0.8s ease both;
+}
+
+@keyframes reportFade {
+  from {
+    opacity: 0;
+
+    transform: translateY(30px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/*========================
+      CARD ANIMATION
+=========================*/
+
+.info-card,
+.metric,
+.metric-card {
+  animation: cardPop 0.7s ease both;
+}
+
+@keyframes cardPop {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+/*==================================================
+      PART 2A-2B-1
+      PREMIUM BMI GAUGE
+      SVG • GLOW • ANIMATION
+==================================================*/
+
+/*========================
+      GAUGE WRAPPER
+=========================*/
+
+.gauge-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin: 40px 0;
+}
+
+.bmi-gauge {
+  position: relative;
+
+  width: 280px;
+
+  height: 280px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  transition: 0.4s;
+}
+
+.bmi-gauge:hover {
+  transform: scale(1.04);
+}
+
+/*========================
+        SVG
+=========================*/
+
+.bmi-gauge svg {
+  width: 280px;
+
+  height: 280px;
+
+  transform: rotate(-90deg);
+
+  overflow: visible;
+
+  filter: drop-shadow(0 10px 25px rgba(37, 99, 235, 0.18));
+}
+
+/*========================
+    BACKGROUND CIRCLE
+=========================*/
+
+.gauge-bg {
+  fill: none;
+
+  stroke: #e5e7eb;
+
+  stroke-width: 14;
+
+  opacity: 0.75;
+}
+
+/*========================
+      PROGRESS ARC
+=========================*/
+
+.gauge-progress {
+  fill: none;
+
+  stroke: url(#bmiGradient);
+
+  stroke-width: 14;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 597;
+
+  stroke-dashoffset: 597;
+
+  transition:
+    stroke-dashoffset 1.8s ease,
+    stroke 0.4s ease;
+
+  filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.55))
+    drop-shadow(0 0 20px rgba(59, 130, 246, 0.35));
+}
+
+/*========================
+      CENTER PANEL
+=========================*/
+
+.gauge-center {
+  position: absolute;
+
+  width: 175px;
+
+  height: 175px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(245, 248, 255, 0.9)
+  );
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(15, 23, 42, 0.12);
+
+  border: 6px solid rgba(255, 255, 255, 0.95);
+
+  backdrop-filter: blur(8px);
+
+  z-index: 2;
+
+  transition: 0.35s;
+}
+
+.bmi-gauge:hover .gauge-center {
+  transform: scale(1.04);
+}
+
+/*========================
+      BMI VALUE
+=========================*/
+
+.gauge-center h1 {
+  font-size: 3.2rem;
+
+  font-weight: 800;
+
+  color: var(--primary);
+
+  line-height: 1;
+
+  margin-bottom: 6px;
+
+  letter-spacing: -1px;
+
+  text-shadow: 0 2px 8px rgba(37, 99, 235, 0.18);
+}
+
+/*========================
+      BMI LABEL
+=========================*/
+
+.gauge-center span {
+  font-size: 0.92rem;
+
+  font-weight: 600;
+
+  color: var(--gray);
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+/*========================
+      CATEGORY
+=========================*/
+
+.gauge-center p {
+  margin-top: 10px;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  color: var(--success);
+
+  text-align: center;
+}
+
+/*========================
+      OUTER GLOW
+=========================*/
+
+.bmi-gauge::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100%;
+
+  height: 100%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(rgba(37, 99, 235, 0.12), transparent 70%);
+
+  animation: bmiGlow 3s ease-in-out infinite;
+
+  z-index: -1;
+}
+
+/*========================
+      ROTATING RING
+=========================*/
+
+.bmi-gauge::after {
+  content: "";
+
+  position: absolute;
+
+  width: 255px;
+
+  height: 255px;
+
+  border-radius: 50%;
+
+  border: 2px dashed rgba(37, 99, 235, 0.18);
+
+  animation: rotateRing 25s linear infinite;
+}
+
+/*========================
+      GLOW ANIMATION
+=========================*/
+
+@keyframes bmiGlow {
+  0% {
+    transform: scale(0.94);
+
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1.06);
+
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: scale(0.94);
+
+    opacity: 0.45;
+  }
+}
+
+/*========================
+      ROTATE ANIMATION
+=========================*/
+
+@keyframes rotateRing {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*========================
+      RESPONSIVE
+=========================*/
+
+@media (max-width: 768px) {
+  .bmi-gauge {
+    width: 240px;
+
+    height: 240px;
+  }
+
+  .bmi-gauge svg {
+    width: 240px;
+
+    height: 240px;
+  }
+
+  .gauge-center {
+    width: 150px;
+
+    height: 150px;
+  }
+
+  .gauge-center h1 {
+    font-size: 2.6rem;
+  }
+}
+/*==================================================
+      PART 2A-2B-2
+      FITNESS SCORE + BODY FAT BAR
+      Premium UI/UX
+==================================================*/
+
+/*==============================
+        FITNESS CIRCLE
+===============================*/
+
+.fitness-circle {
+  position: relative;
+
+  width: 220px;
+
+  height: 220px;
+
+  margin: 25px auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  transition: 0.4s ease;
+}
+
+.fitness-circle:hover {
+  transform: scale(1.05);
+}
+
+.fitness-circle svg {
+  width: 220px;
+
+  height: 220px;
+
+  transform: rotate(-90deg);
+
+  overflow: visible;
+}
+
+/*==============================
+      BACKGROUND RING
+===============================*/
+
+.fitness-bg {
+  fill: none;
+
+  stroke: #e2e8f0;
+
+  stroke-width: 12;
+}
+
+/*==============================
+      PROGRESS RING
+===============================*/
+
+.fitness-progress {
+  fill: none;
+
+  stroke: url(#fitnessGradient);
+
+  stroke-width: 12;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: 440;
+
+  stroke-dashoffset: 440;
+
+  transition: stroke-dashoffset 2s ease;
+
+  filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.4))
+    drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
+}
+
+/*==============================
+      FITNESS VALUE
+===============================*/
+
+.fitness-text {
+  position: absolute;
+
+  text-align: center;
+}
+
+.fitness-text h2 {
+  font-size: 3rem;
+
+  font-weight: 800;
+
+  color: var(--primary);
+
+  line-height: 1;
+}
+
+.fitness-text span {
+  font-size: 1rem;
+
+  color: var(--gray);
+
+  font-weight: 600;
+}
+
+/*==============================
+        OUTER GLOW
+===============================*/
+
+.fitness-circle::before {
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+
+  height: 190px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(rgba(37, 99, 235, 0.1), transparent 75%);
+
+  animation: fitnessPulse 3s infinite;
+
+  z-index: -1;
+}
+
+/*==============================
+       PULSE EFFECT
+===============================*/
+
+@keyframes fitnessPulse {
+  0% {
+    transform: scale(0.95);
+
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1.08);
+
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(0.95);
+
+    opacity: 0.45;
+  }
+}
+
+/*==================================================
+        BODY FAT CARD
+==================================================*/
+
+.progress {
+  width: 100%;
+
+  height: 18px;
+
+  background: #edf2f7;
+
+  border-radius: 50px;
+
+  overflow: hidden;
+
+  margin-top: 20px;
+
+  position: relative;
+
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/*==============================
+      PROGRESS BAR
+===============================*/
+
+.progress-fill {
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: 50px;
+
+  background: linear-gradient(90deg, #16a34a, #22c55e, #38bdf8);
+
+  transition: width 2s ease;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/*==============================
+      SHINE EFFECT
+===============================*/
+
+.progress-fill::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -60%;
+
+  width: 50%;
+
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  transform: skewX(-25deg);
+
+  animation: shine 2.5s infinite;
+}
+
+/*==============================
+      SHINE KEYFRAME
+===============================*/
+
+@keyframes shine {
+  0% {
+    left: -60%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+/*==============================
+      BODY FAT TEXT
+===============================*/
+
+#bodyFatStatus {
+  margin-top: 15px;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  color: var(--gray);
+
+  text-align: center;
+}
+
+/*==============================
+      RESPONSIVE
+===============================*/
+
+@media (max-width: 768px) {
+  .fitness-circle {
+    width: 180px;
+
+    height: 180px;
+  }
+
+  .fitness-circle svg {
+    width: 180px;
+
+    height: 180px;
+  }
+
+  .fitness-text h2 {
+    font-size: 2.4rem;
+  }
+
+  .progress {
+    height: 16px;
+  }
+}
+/*==================================================
+      PART 2A-2B-3
+      HEALTH RISK BADGE
+      WHO BMI TABLE
+      STATUS COLORS
+      FINAL PREMIUM EFFECTS
+==================================================*/
+
+/*==================================
+        HEALTH RISK BADGE
+===================================*/
+
+.risk-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  min-width: 230px;
+
+  padding: 18px 35px;
+
+  border-radius: 60px;
+
+  margin: 15px auto;
+
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+  color: #fff;
+
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+
+  box-shadow: 0 18px 35px rgba(34, 197, 94, 0.28);
+
+  transition: 0.35s;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.risk-badge::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180%;
+
+  height: 180%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  left: -150%;
+
+  top: -40%;
+
+  transform: rotate(20deg);
+
+  animation: riskShine 5s linear infinite;
+}
+
+@keyframes riskShine {
+  100% {
+    left: 180%;
+  }
+}
+
+.risk-badge:hover {
+  transform: translateY(-4px) scale(1.04);
+
+  box-shadow: 0 22px 45px rgba(37, 99, 235, 0.28);
+}
+
+.risk-badge span {
+  position: relative;
+
+  z-index: 2;
+
+  letter-spacing: 0.5px;
+}
+
+/*==================================
+        RISK COLORS
+===================================*/
+
+.risk-low {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.risk-moderate {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.risk-high {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.risk-extreme {
+  background: linear-gradient(135deg, #7f1d1d, #991b1b);
+}
+
+/*==================================
+        WHO TABLE
+===================================*/
+
+.bmi-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #fff;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.bmi-table thead {
+  background: var(--blue-gradient);
+
+  color: #fff;
+}
+
+.bmi-table th {
+  padding: 18px;
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  letter-spacing: 0.5px;
+}
+
+.bmi-table td {
+  padding: 18px;
+
+  border-bottom: 1px solid #edf2f7;
+
+  transition: 0.3s;
+}
+
+.bmi-table tbody tr {
+  transition: 0.35s;
+}
+
+.bmi-table tbody tr:hover {
+  background: #eff6ff;
+
+  transform: scale(1.01);
+}
+
+/*==================================
+      ACTIVE BMI CATEGORY
+===================================*/
+
+.active-category {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.15),
+    rgba(56, 189, 248, 0.12)
+  ) !important;
+
+  font-weight: 700;
+
+  color: var(--primary-dark);
+
+  border-left: 6px solid var(--primary);
+
+  animation: tablePulse 1.2s ease infinite alternate;
+}
+
+@keyframes tablePulse {
+  from {
+    box-shadow: inset 0 0 0 rgba(37, 99, 235, 0.15);
+  }
+
+  to {
+    box-shadow: inset 0 0 25px rgba(37, 99, 235, 0.12);
+  }
+}
+
+/*==================================
+      STATUS COLORS
+===================================*/
+
+.status-good {
+  color: #16a34a !important;
+}
+
+.status-warning {
+  color: #f59e0b !important;
+}
+
+.status-danger {
+  color: #ef4444 !important;
+}
+
+/*==================================
+      PREMIUM HOVER EFFECTS
+===================================*/
+
+.metric-card:hover,
+.info-card:hover,
+.metric:hover {
+  transform: translateY(-8px) scale(1.02);
+
+  box-shadow: 0 22px 50px rgba(37, 99, 235, 0.18);
+}
+
+.report-section {
+  animation: fadeUp 0.7s ease both;
+}
+
+.report-section:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.report-section:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.report-section:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.report-section:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+.report-section:nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+.report-section:nth-child(7) {
+  animation-delay: 0.48s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/*==================================
+      MOBILE
+===================================*/
+
+@media (max-width: 768px) {
+  .risk-badge {
+    width: 100%;
+
+    min-width: auto;
+
+    font-size: 1rem;
+
+    padding: 15px 20px;
+  }
+
+  .bmi-table {
+    display: block;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+  }
+}
+/*==================================================
+      PART 2A-2C-1
+      PREMIUM WHO BMI TABLE
+      Professional Medical Report UI
+===================================================*/
+
+/*========================================
+            SECTION HEADER
+=========================================*/
+
+.table-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+.table-header h3 {
+  font-size: 1.4rem;
+
+  font-weight: 700;
+
+  color: var(--primary-dark);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.table-header h3 i {
+  color: var(--primary);
+}
+
+/*========================================
+            TABLE CONTAINER
+=========================================*/
+
+.table-wrapper {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background: #fff;
+
+  border: 1px solid rgba(37, 99, 235, 0.08);
+
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+
+  transition: 0.4s;
+}
+
+.table-wrapper:hover {
+  box-shadow: 0 20px 55px rgba(37, 99, 235, 0.15);
+
+  transform: translateY(-3px);
+}
+
+/*========================================
+            TABLE
+=========================================*/
+
+.bmi-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  overflow: hidden;
+}
+
+/*========================================
+            TABLE HEADER
+=========================================*/
+
+.bmi-table thead {
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+
+  color: #fff;
+}
+
+.bmi-table thead th {
+  padding: 20px;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+
+  text-transform: uppercase;
+
+  border: none;
+}
+
+/*========================================
+            TABLE BODY
+=========================================*/
+
+.bmi-table tbody tr {
+  transition: 0.35s;
+
+  position: relative;
+}
+
+.bmi-table tbody td {
+  padding: 18px 20px;
+
+  font-size: 0.95rem;
+
+  border-bottom: 1px solid #edf2f7;
+
+  transition: 0.35s;
+}
+
+.bmi-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/*========================================
+        STRIPED EFFECT
+=========================================*/
+
+.bmi-table tbody tr:nth-child(even) {
+  background: #f8fbff;
+}
+
+/*========================================
+          HOVER EFFECT
+=========================================*/
+
+.bmi-table tbody tr:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 0.08),
+    rgba(56, 189, 248, 0.05)
+  );
+
+  transform: scale(1.01);
+
+  cursor: pointer;
+}
+
+.bmi-table tbody tr:hover td {
+  color: #1d4ed8;
+}
+
+/*========================================
+        ACTIVE CATEGORY
+=========================================*/
+
+.active-category {
+  position: relative;
+
+  background: linear-gradient(
+    90deg,
+    rgba(22, 163, 74, 0.18),
+    rgba(34, 197, 94, 0.1)
+  ) !important;
+
+  font-weight: 700;
+
+  color: #15803d;
+}
+
+.active-category td {
+  color: #166534;
+
+  font-weight: 700;
+}
+
+.active-category::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 6px;
+
+  height: 100%;
+
+  background: #22c55e;
+}
+
+/*========================================
+          STATUS BADGES
+=========================================*/
+
+.status {
+  display: inline-block;
+
+  padding: 6px 14px;
+
+  border-radius: 30px;
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+
+  color: #fff;
+}
+
+.status-under {
+  background: #f59e0b;
+}
+
+.status-normal {
+  background: #22c55e;
+}
+
+.status-over {
+  background: #fb923c;
+}
+
+.status-obese {
+  background: #ef4444;
+}
+
+/*========================================
+        CATEGORY RIBBON
+=========================================*/
+
+.category-ribbon {
+  position: absolute;
+
+  top: 15px;
+
+  right: -40px;
+
+  width: 150px;
+
+  text-align: center;
+
+  padding: 6px;
+
+  transform: rotate(45deg);
+
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+
+  color: #fff;
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+}
+
+/*========================================
+          LEGEND
+=========================================*/
+
+.bmi-legend {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.legend-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 0.9rem;
+
+  color: var(--gray);
+}
+
+.legend-color {
+  width: 18px;
+
+  height: 18px;
+
+  border-radius: 50%;
+}
+
+.legend-under {
+  background: #f59e0b;
+}
+
+.legend-normal {
+  background: #22c55e;
+}
+
+.legend-over {
+  background: #fb923c;
+}
+
+.legend-obese {
+  background: #ef4444;
+}
+
+/*========================================
+        TABLE FOOTNOTE
+=========================================*/
+
+.table-note {
+  margin-top: 20px;
+
+  padding: 15px 20px;
+
+  border-left: 5px solid #2563eb;
+
+  background: #eff6ff;
+
+  border-radius: 12px;
+
+  color: #475569;
+
+  line-height: 1.7;
+
+  font-size: 0.92rem;
+}
+
+/*========================================
+        RESPONSIVE
+=========================================*/
+
+@media (max-width: 768px) {
+  .table-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .bmi-table {
+    display: block;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+  }
+
+  .bmi-table thead th,
+  .bmi-table td {
+    padding: 15px;
+  }
+
+  .bmi-legend {
+    justify-content: flex-start;
+  }
+}
+/*==================================================
+      PART 2A-2C-2A
+      PREMIUM KEYFRAMES
+      Fade • Slide • Scale • Rotate • Bounce
+==================================================*/
+
+/*==============================
+        FADE IN
+==============================*/
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*==============================
+      FADE UP
+==============================*/
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/*==============================
+      FADE DOWN
+==============================*/
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/*==============================
+      SLIDE LEFT
+==============================*/
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+
+    transform: translateX(60px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+/*==============================
+      SLIDE RIGHT
+==============================*/
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+
+    transform: translateX(-60px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+/*==============================
+      SCALE IN
+==============================*/
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.85);
+  }
+
+  60% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+/*==============================
+      ROTATE IN
+==============================*/
+
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+
+    transform: rotate(-12deg) scale(0.85);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/*==============================
+      BOUNCE
+==============================*/
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(-5px);
+  }
+}
+
+/*==============================
+      FLOAT UP
+==============================*/
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(12px);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+
+    opacity: 1;
+  }
+}
+
+/*==============================
+      POP
+==============================*/
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.5);
+  }
+
+  70% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+/*==============================
+      ANIMATION HELPERS
+==============================*/
+
+.animate-fade {
+  animation: fadeIn 0.8s ease both;
+}
+
+.animate-up {
+  animation: fadeUp 0.8s ease both;
+}
+
+.animate-down {
+  animation: fadeDown 0.8s ease both;
+}
+
+.animate-left {
+  animation: slideLeft 0.8s ease both;
+}
+
+.animate-right {
+  animation: slideRight 0.8s ease both;
+}
+
+.animate-scale {
+  animation: scaleIn 0.7s ease both;
+}
+
+.animate-rotate {
+  animation: rotateIn 0.8s ease both;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+.animate-pop {
+  animation: pop 0.6s ease both;
+}
+
+.animate-float {
+  animation: floatUp 0.8s ease both;
+}
+/*==================================================
+      PART 2A-2C-2B
+      PREMIUM ANIMATIONS
+      Shimmer • Glow • Floating • Pulse • Gradient
+      Animation Utility Classes
+==================================================*/
+
+/*=====================================
+        SHIMMER EFFECT
+======================================*/
+
+@keyframes shimmer {
+  0% {
+    background-position: -300px 0;
+  }
+
+  100% {
+    background-position: 300px 0;
+  }
+}
+
+/*=====================================
+          GLOW PULSE
+======================================*/
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0 rgba(37, 99, 235, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(37, 99, 235, 0.45),
+      0 0 60px rgba(56, 189, 248, 0.25);
+  }
+
+  100% {
+    box-shadow: 0 0 0 rgba(37, 99, 235, 0.25);
+  }
+}
+
+/*=====================================
+        FLOATING
+======================================*/
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/*=====================================
+          HEARTBEAT
+======================================*/
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.05);
+  }
+
+  50% {
+    transform: scale(0.98);
+  }
+
+  75% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*=====================================
+          RIPPLE
+======================================*/
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.9);
+
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1.45);
+
+    opacity: 0;
+  }
+}
+
+/*=====================================
+      GRADIENT FLOW
+======================================*/
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*=====================================
+      SOFT PULSE
+======================================*/
+
+@keyframes softPulse {
+  0% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.9;
+  }
+}
+
+/*=====================================
+      SHIMMER CLASS
+======================================*/
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.45),
+    rgba(255, 255, 255, 0.08)
+  );
+
+  background-size: 300px 100%;
+
+  animation: shimmer 2.2s linear infinite;
+}
+
+/*=====================================
+      GLOW CLASS
+======================================*/
+
+.animate-glow {
+  animation: glow 2.5s ease-in-out infinite;
+}
+
+/*=====================================
+      FLOAT CLASS
+======================================*/
+
+.animate-floating {
+  animation: floating 4s ease-in-out infinite;
+}
+
+/*=====================================
+      HEARTBEAT CLASS
+======================================*/
+
+.animate-heart {
+  animation: heartbeat 2.2s infinite;
+}
+
+/*=====================================
+      RIPPLE CLASS
+======================================*/
+
+.animate-ripple {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.animate-ripple::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  border: 2px solid rgba(37, 99, 235, 0.35);
+
+  animation: ripple 2.5s infinite;
+}
+
+/*=====================================
+      GRADIENT CLASS
+======================================*/
+
+.animate-gradient {
+  background-size: 250% 250%;
+
+  animation: gradientFlow 6s ease infinite;
+}
+
+/*=====================================
+      SOFT PULSE CLASS
+======================================*/
+
+.animate-soft {
+  animation: softPulse 2s ease-in-out infinite;
+}
+
+/*=====================================
+      STAGGER UTILITIES
+======================================*/
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.delay-5 {
+  animation-delay: 0.5s;
+}
+
+/*=====================================
+      GPU OPTIMIZATION
+======================================*/
+
+.animate-glow,
+.animate-floating,
+.animate-heart,
+.animate-gradient,
+.animate-soft {
+  will-change: transform, opacity, box-shadow, background-position;
+
+  transform: translateZ(0);
+
+  backface-visibility: hidden;
+}
+/*==================================================
+      PART 2A-2C-3
+      Mobile • Accessibility
+      Print/PDF • Final Polish
+==================================================*/
+
+/*======================================
+        ACCESSIBILITY
+=======================================*/
+
+:focus-visible {
+  outline: 3px solid #2563eb;
+
+  outline-offset: 4px;
+
+  border-radius: 8px;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.2);
+}
+
+::selection {
+  background: #2563eb;
+
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+
+  display: block;
+}
+
+/*======================================
+      REDUCED MOTION
+=======================================*/
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+
+    transition: none !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+/*======================================
+        LARGE TABLETS
+=======================================*/
+
+@media (max-width: 1024px) {
+  .premium-report {
+    padding: 30px;
+  }
+
+  .report-section {
+    padding: 24px;
+  }
+
+  .dual-layout {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+}
+
+/*======================================
+          TABLETS
+=======================================*/
+
+@media (max-width: 768px) {
+  body {
+    padding: 18px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .report-header {
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 18px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-card {
+    padding: 22px;
+  }
+
+  .report-section {
+    padding: 20px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+
+    border-radius: 18px;
+  }
+
+  .bmi-table {
+    min-width: 650px;
+  }
+}
+
+/*======================================
+        SMALL MOBILES
+=======================================*/
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .premium-report {
+    padding: 15px;
+
+    border-radius: 20px;
+  }
+
+  .report-section {
+    padding: 16px;
+
+    border-radius: 18px;
+  }
+
+  .header-text h2 {
+    font-size: 1.35rem;
+  }
+
+  .header-text p {
+    font-size: 0.88rem;
+  }
+
+  .logo-circle {
+    width: 65px;
+
+    height: 65px;
+
+    font-size: 1.8rem;
+  }
+
+  .metric h4 {
+    font-size: 1.15rem;
+  }
+
+  .metric-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .risk-badge {
+    width: 100%;
+  }
+}
+
+/*======================================
+        PRINT / PDF
+=======================================*/
+
+@media print {
+  body {
+    background: #fff !important;
+
+    padding: 0;
+
+    color: #000;
+  }
+
+  .container {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+  }
+
+  .premium-report {
+    background: #fff !important;
+
+    border: none;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+
+    -webkit-backdrop-filter: none;
+  }
+
+  button,
+  .pdf-btn {
+    display: none !important;
+  }
+
+  .report-section {
+    page-break-inside: avoid;
+
+    break-inside: avoid;
+
+    box-shadow: none;
+
+    border: 1px solid #ddd;
+
+    margin-bottom: 16px;
+  }
+
+  .bmi-table {
+    page-break-inside: avoid;
+  }
+}
+
+/*======================================
+      PDF IMAGE QUALITY
+=======================================*/
+
+#report {
+  -webkit-print-color-adjust: exact;
+
+  print-color-adjust: exact;
+
+  image-rendering: high-quality;
+}
+
+/*======================================
+      FINAL HOVER POLISH
+=======================================*/
+
+.report-section,
+.info-card,
+.metric,
+.metric-card,
+.risk-badge,
+button {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.report-section:hover {
+  transform: translateY(-4px);
+}
+
+.metric:hover,
+.info-card:hover {
+  transform: translateY(-6px);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/*======================================
+      SCROLLBAR
+=======================================*/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf2f7;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+
+  background: linear-gradient(180deg, #2563eb, #38bdf8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+
+.chart-card:hover canvas {
+  transform: scale(1.015);
+
+  filter: brightness(1.02);
+}
+/*==================================================
+                HEALTH ANALYTICS
+==================================================*/
+
+.charts-section {
+  margin-top: 40px;
+  position: relative;
+}
+
+/*-----------------------------------
+            SECTION TITLE
+-----------------------------------*/
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.section-title h2 i {
+  color: #00d4ff;
+}
+
+.section-title p {
+  color: #b8c4d8;
+  font-size: 0.95rem;
+}
+
+/*-----------------------------------
+          GRID
+-----------------------------------*/
+/* .charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+} */
+.charts-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+
+  gap: 30px;
+
+  margin-top: 28px;
+}
+
+.chart-full {
+  grid-column: 1/-1;
+}
+.chart-card {
+  min-width: 0;
+}
+/*-----------------------------------
+          CARD
+-----------------------------------*/
+
+.chart-card {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  transition: 0.4s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #00d4ff;
+
+  box-shadow:
+    0 18px 45px rgba(0, 212, 255, 0.2),
+    0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Glow Border */
+
+.chart-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 22px;
+
+  padding: 1px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.4),
+    rgba(130, 87, 229, 0.3),
+    rgba(0, 255, 170, 0.25)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  pointer-events: none;
+
+  opacity: 0.8;
+}
+
+/*-----------------------------------
+         HEADER
+-----------------------------------*/
+
+.chart-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 22px 24px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chart-header h3 {
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+  color: var(--primary-dark);
+
+  margin-bottom: 6px;
+}
+
+.chart-header span {
+  color: #9fb1c7;
+
+  font-size: 0.87rem;
+}
+
+/*-----------------------------------
+        ICON
+-----------------------------------*/
+
+.chart-icon {
+  width: 54px;
+
+  height: 54px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 16px;
+
+  font-size: 1.5rem;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.15),
+    rgba(130, 87, 229, 0.15)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+  transition: 0.4s;
+}
+
+.chart-card:hover .chart-icon {
+  transform: rotate(8deg) scale(1.08);
+
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+/*-----------------------------------
+         BODY
+-----------------------------------*/
+
+.chart-body {
+  position: relative;
+
+  padding: 25px;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 212, 255, 0.05),
+    transparent 70%
+  );
+  /* overflow: hidden; */
+}
+
+/*-----------------------------------
+        CANVAS
+-----------------------------------*/
+
+.chart-body canvas {
+  width: 100% !important;
+  max-width: 100%;
+  height: 300px !important;
+
+  display: block;
+}
+
+/*-----------------------------------
+      LOADER
+-----------------------------------*/
+
+.chart-loader {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: rgba(15, 23, 42, 0.88);
+
+  border-radius: 20px;
+
+  transition: 0.35s;
+
+  z-index: 5;
+}
+
+.loader-circle {
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  border: 4px solid rgba(255, 255, 255, 0.18);
+
+  border-top: 4px solid #00d4ff;
+
+  animation: chartSpin 1s linear infinite;
+}
+
+@keyframes chartSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*-----------------------------------
+     PREMIUM HOVER LIGHT
+-----------------------------------*/
+
+.chart-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+
+  height: 220px;
+
+  top: -90px;
+
+  right: -90px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.18), transparent 70%);
+
+  opacity: 0;
+
+  transition: 0.5s;
+}
+
+.chart-card:hover::after {
+  opacity: 1;
+}
+
+/*-----------------------------------
+       RESPONSIVE
+-----------------------------------*/
+
+@media (max-width: 992px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-header {
+    padding: 18px;
+  }
+
+  .chart-body {
+    padding: 18px;
+  }
+
+  .chart-body canvas {
+    height: 260px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 14px;
+  }
+
+  .chart-icon {
+    width: 46px;
+
+    height: 46px;
+
+    font-size: 1.2rem;
+  }
+
+  .chart-body canvas {
+    height: 230px !important;
+  }
+}

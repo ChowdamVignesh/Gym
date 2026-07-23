@@ -1,197 +1,993 @@
+/*=========================================================
+            PREMIUM PROGRAMS SECTION
+            PART 1
+            Global Styles • Background • Layout • Cards
+==========================================================*/
+
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/*=========================
+        RESET
+=========================*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --bg-dark: #090909;
+  --card-bg: rgba(20, 20, 20, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  --white: #ffffff;
+  --text: #cfcfcf;
+
+  --shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+
+  --transition: 0.4s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  /* background-image : url("/images/programImg/backgroundImg.jpg"); */
+  background: var(--bg-dark);
+  overflow-x: hidden;
+  position: relative;
+  color: white;
 }
+
+/*=========================
+      BACKGROUND IMAGE
+=========================*/
+
 body::before {
   content: "";
+
   position: fixed;
   inset: 0;
 
-  background: url("/images/programImg/backgroundImg.jpg") center center / cover
-    no-repeat;
-
-  filter: blur(1px);
-  transform: scale(1.1);
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/images/programImg/backgroundImg.jpg") center center/cover no-repeat;
 
   z-index: -2;
 }
+
 body::after {
   content: "";
+
   position: fixed;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.5);
+  background: radial-gradient(
+    circle at top right,
+    rgba(255, 255, 255, 0.03),
+    transparent 40%
+  );
 
   z-index: -1;
 }
+
+/*=========================
+      PROGRAM SECTION
+=========================*/
+
 .programs {
-  width: min(1400px, 95%);
-  margin: 50px auto;
+  width: min(1280px, 92%);
+
+  margin: 120px auto 70px;
+
   display: flex;
+
   flex-direction: column;
-  gap: 18px;
+
+  gap: 28px;
 }
-.overlay {
-  position: absolute;
-  z-index: 1;
-  filter: blur(3px);
-}
+
+/*=========================
+      PREMIUM CARD
+=========================*/
+
 .program-card {
+  position: relative;
+
   display: flex;
-  align-items: stretch;
-  min-height: 100px;
-  border-radius: 24px;
+
+  align-items: center;
+
+  min-height: 220px;
+
+  border-radius: 22px;
+
   overflow: hidden;
-  background: linear-gradient(90deg, #050505 0%, #101010 40%, #161616 100%);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+
+  background: var(--card-bg);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid var(--glass-border);
+
+  box-shadow: var(--shadow);
+
+  transition: var(--transition);
 }
+
+/* Left Accent Border */
+
+.program-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 5px;
+  height: 100%;
+
+  background: var(--accent);
+}
+
+/* Shine Effect */
+
+.program-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 40%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+
+  transition: 0.8s;
+}
+
+/* Hover */
+
+.program-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(255, 255, 255, 0.16);
+
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55);
+}
+
+.program-card:hover::after {
+  left: 140%;
+}
+
+/*=========================
+      PROGRAM CONTENT
+=========================*/
 
 .program-content {
-  width: 42%;
+  width: 44%;
+
   display: flex;
+
+  align-items: center;
+
   gap: 24px;
-  padding: 25px 30px;
-  align-items: flex-start;
-  clip-path: polygon(0 0, calc(100% - 60px) 0, 100% 100%, 0 100%);
-  position: relative;
+
+  padding: 34px;
 }
 
+/*=========================
+      PROGRAM ICON
+=========================*/
+
 .program-icon {
-  min-width: 70px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 28px;
+  width: 72px;
+
+  height: 72px;
+
+  min-width: 72px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 18px;
+
+  font-size: 34px;
+
   color: white;
+
+  background: linear-gradient(135deg, var(--accent), rgba(255, 255, 255, 0.12));
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+  transition: 0.35s;
+}
+
+.program-card:hover .program-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+/*=========================
+      TEXT CONTENT
+=========================*/
+
+.program-text {
+  flex: 1;
 }
 
 .program-text h2 {
   color: white;
-  font-size: 2rem;
-  margin-bottom: 8px;
+
+  font-size: 1.55rem;
+
   font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  margin-bottom: 12px;
+
+  text-transform: uppercase;
 }
 
 .program-text p {
-  color: #d7d7d7;
-  line-height: 1.5;
-  font-size: 1rem;
+  color: var(--text);
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+
+  max-width: 430px;
 }
 
-.divider {
-  width: 5px;
-  background: #ff3b3b;
-  transform: skew(-18deg);
-  margin: 0px 20px;
-}
+/*=========================
+        IMAGE AREA
+=========================*/
 
 .program-image {
-  width: 100%;
-  flex: 2;
+  flex: 1;
+
+  height: 220px;
+
   overflow: hidden;
-  clip-path: polygon(60px 0px, 100% 0, 100% 100%, 0 100%);
+
+  position: relative;
+}
+
+.program-image::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.28), transparent 35%);
+
+  z-index: 1;
 }
 
 .program-image img {
   width: 100%;
-  height: 220px;
+
+  height: 100%;
+
   object-fit: cover;
-  display: block;
-  object-position: center 35%;
+
+  transition: 0.7s ease;
 }
 
+.program-card:hover .program-image img {
+  transform: scale(1.08);
+}
+
+/*=========================
+      COLOR THEMES
+=========================*/
+
+.red {
+  --accent: #ff4d4d;
+}
+
+.blue {
+  --accent: #25b6ff;
+}
+
+.green {
+  --accent: #3bd671;
+}
+
+.purple {
+  --accent: #b26bff;
+}
+
+.orange {
+  --accent: #ff9800;
+}
+
+/*=========================
+      REMOVE OLD STYLES
+=========================*/
+
+.divider {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+/*=========================================================
+        PREMIUM PROGRAMS SECTION
+        PART 2
+        Buttons • Hover Effects • Animations • Polish
+==========================================================*/
+
+/*=========================
+      PREMIUM BUTTON
+=========================*/
+
+.program-text button,
 .btn1,
 .btn2,
 .btn3,
 .btn4,
-.btn5{
-  margin-top: 10px;
-  padding: 10px 20px;
-  border-radius: 20%;
-}
-button a{
-  text-decoration: none;
-  font-weight: 500;
-  color: #050505;
-}
-/* Theme Colors */
-
-.red .program-icon,
-.red .divider,
-.btn1 {
-  background: #e53935;
-}
-
-.blue .program-icon,
-.blue .divider,
-.btn2 {
-  background: #2196f3;
-}
-
-.green .program-icon,
-.green .divider,
-.btn3 {
-  background: #4caf50;
-}
-
-.purple .program-icon,
-.purple .divider,
-.btn4 {
-  background: #8e44ad;
-}
-
-.orange .program-icon,
-.orange .divider,
 .btn5 {
-  background: #f57c00;
+  margin-top: 22px;
+
+  padding: 12px 28px;
+
+  border: none;
+
+  outline: none;
+
+  cursor: pointer;
+
+  border-radius: 50px;
+
+  background: var(--accent);
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  transition: all 0.35s ease;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
-/* Mobile */
+/* Anchor */
 
-@media (max-width: 992px) {
-  .program-card {
-    flex-direction: column;
+.program-text button a,
+.btn1 a,
+.btn2 a,
+.btn3 a,
+.btn4 a,
+.btn5 a {
+  color: #fff;
+
+  text-decoration: none;
+
+  display: block;
+}
+
+/* Shine */
+
+.program-text button::before,
+.btn1::before,
+.btn2::before,
+.btn3::before,
+.btn4::before,
+.btn5::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+
+  transition: 0.6s;
+}
+
+.program-text button:hover::before,
+.btn1:hover::before,
+.btn2:hover::before,
+.btn3:hover::before,
+.btn4:hover::before,
+.btn5:hover::before {
+  left: 140%;
+}
+
+/* Hover */
+
+.program-text button:hover,
+.btn1:hover,
+.btn2:hover,
+.btn3:hover,
+.btn4:hover,
+.btn5:hover {
+  transform: translateY(-4px);
+
+  filter: brightness(1.08);
+
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* Click */
+
+.program-text button:active,
+.btn1:active,
+.btn2:active,
+.btn3:active,
+.btn4:active,
+.btn5:active {
+  transform: scale(0.97);
+}
+
+/*=========================
+      CARD HOVER DETAILS
+=========================*/
+
+.program-card:hover .program-text h2 {
+  color: var(--accent);
+
+  transition: 0.35s;
+}
+
+.program-card:hover .program-text p {
+  color: #ededed;
+}
+
+/* Left Accent Glow */
+
+.program-card:hover::before {
+  box-shadow:
+    0 0 15px var(--accent),
+    0 0 30px var(--accent);
+}
+
+/*=========================
+        ICON EFFECTS
+=========================*/
+
+.program-icon {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.program-card:hover .program-icon {
+  transform: rotate(-8deg) scale(1.08);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+/*=========================
+      IMAGE EFFECTS
+=========================*/
+
+.program-image {
+  position: relative;
+}
+
+.program-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.18));
+
+  opacity: 0;
+
+  transition: 0.45s;
+}
+
+.program-card:hover .program-image::after {
+  opacity: 1;
+}
+
+.program-card:hover .program-image img {
+  transform: scale(1.08);
+
+  filter: contrast(1.05) saturate(1.08);
+}
+
+/*=========================
+        ENTRANCE
+=========================*/
+
+.program-card {
+  animation: cardFade 0.8s ease both;
+}
+
+.program-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.program-card:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.program-card:nth-child(4) {
+  animation-delay: 0.36s;
+}
+
+.program-card:nth-child(5) {
+  animation-delay: 0.48s;
+}
+
+/*=========================
+      FLOAT ANIMATION
+=========================*/
+
+.program-card:hover {
+  animation: floatCard 2.2s ease-in-out infinite;
+}
+
+/*=========================
+      KEYFRAMES
+=========================*/
+
+@keyframes cardFade {
+  from {
+    opacity: 0;
+
+    transform: translateY(45px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatCard {
+  0% {
+    transform: translateY(-8px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+/*=========================
+      IMAGE LOADING
+=========================*/
+
+.program-image img {
+  animation: imageZoom 1.2s ease;
+}
+
+@keyframes imageZoom {
+  from {
+    transform: scale(1.12);
+
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+}
+
+/*=========================
+      SMOOTH TRANSITIONS
+=========================*/
+
+.program-card *,
+.program-card *::before,
+.program-card *::after {
+  transition: all 0.35s ease;
+}
+
+/*=========================
+      PREMIUM SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+/*=========================================================
+        PREMIUM PROGRAMS SECTION
+        PART 3
+        Responsive Design + Final Polish
+==========================================================*/
+
+/*=========================
+      LARGE DESKTOP
+=========================*/
+
+@media (max-width: 1300px) {
+  .programs {
+    width: 95%;
   }
 
   .program-content {
-    width: 100%;
+    width: 48%;
+    padding: 30px;
   }
 
-  .divider {
-    width: 100%;
-    height: 5px;
-    transform: none;
+  .program-text h2 {
+    font-size: 1.45rem;
+  }
+
+  .program-text p {
+    font-size: 0.92rem;
+  }
+}
+
+/*=========================
+        LAPTOP
+=========================*/
+
+@media (max-width: 1100px) {
+  .program-card {
+    min-height: 200px;
+  }
+
+  .program-content {
+    width: 50%;
+
+    padding: 28px;
+
+    gap: 20px;
   }
 
   .program-image {
-    height: 250px;
+    height: 200px;
   }
 
   .program-text h2 {
-    font-size: 1.6rem;
+    font-size: 1.35rem;
   }
-}
 
-@media (max-width: 576px) {
-  .program-content {
-    flex-direction: column;
+  .program-text p {
+    font-size: 0.9rem;
+
+    line-height: 1.7;
   }
 
   .program-icon {
-    width: 70px;
-    height: 70px;
+    width: 66px;
+    height: 66px;
+    min-width: 66px;
+
     font-size: 30px;
+  }
+}
+
+/*=========================
+        TABLET
+=========================*/
+
+@media (max-width: 900px) {
+  .programs {
+    margin: 100px auto 60px;
+
+    gap: 24px;
+  }
+
+  .program-card {
+    flex-direction: column;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+  }
+
+  .program-content {
+    width: 100%;
+
+    padding: 28px;
+  }
+
+  .program-image {
+    width: 100%;
+
+    height: 250px;
+  }
+
+  .program-image::before {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent 50%);
   }
 
   .program-text h2 {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+  }
+
+  .program-text p {
+    max-width: 100%;
+  }
+}
+
+/*=========================
+      LARGE MOBILE
+=========================*/
+
+@media (max-width: 768px) {
+  .programs {
+    width: 92%;
+
+    margin: 90px auto 50px;
+
+    gap: 20px;
+  }
+
+  .program-card {
+    min-height: auto;
+  }
+
+  .program-content {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 24px;
+  }
+
+  .program-icon {
+    width: 64px;
+
+    height: 64px;
+
+    min-width: 64px;
+
+    font-size: 30px;
+
+    border-radius: 16px;
+  }
+
+  .program-text h2 {
+    font-size: 1.25rem;
+
+    margin-bottom: 10px;
+  }
+
+  .program-text p {
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+  }
+
+  .program-image {
+    height: 220px;
+  }
+
+  .program-text button,
+  .btn1,
+  .btn2,
+  .btn3,
+  .btn4,
+  .btn5 {
+    padding: 11px 24px;
+
+    font-size: 0.9rem;
+  }
+}
+
+/*=========================
+        MOBILE
+=========================*/
+
+@media (max-width: 576px) {
+  .programs {
+    width: 94%;
+
+    gap: 18px;
+
+    margin: 80px auto 40px;
+  }
+
+  .program-card {
+    border-radius: 18px;
+  }
+
+  .program-content {
+    padding: 20px;
+
+    gap: 16px;
+  }
+
+  .program-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+
+    font-size: 26px;
+
+    border-radius: 14px;
+  }
+
+  .program-text h2 {
+    font-size: 1.12rem;
+
+    letter-spacing: 0.4px;
+  }
+
+  .program-text p {
+    font-size: 0.87rem;
+
+    line-height: 1.65;
+  }
+
+  .program-image {
+    height: 200px;
+  }
+
+  .program-text button,
+  .btn1,
+  .btn2,
+  .btn3,
+  .btn4,
+  .btn5 {
+    width: 100%;
+
+    text-align: center;
+
+    padding: 12px;
+  }
+}
+
+/*=========================
+      SMALL DEVICES
+=========================*/
+
+@media (max-width: 380px) {
+  .program-content {
+    padding: 18px;
+  }
+
+  .program-icon {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+
+    font-size: 24px;
+  }
+
+  .program-text h2 {
+    font-size: 1rem;
+  }
+
+  .program-text p {
+    font-size: 0.84rem;
+  }
+
+  .program-image {
+    height: 180px;
+  }
+}
+
+/*=========================================================
+                FINAL PREMIUM POLISH
+==========================================================*/
+
+/* Better image rendering */
+
+.program-image img {
+  image-rendering: auto;
+
+  backface-visibility: hidden;
+}
+
+/* Smooth GPU acceleration */
+
+.program-card,
+.program-icon,
+.program-image img,
+.program-text button {
+  will-change: transform;
+}
+
+/* Keyboard accessibility */
+
+.program-text button:focus-visible {
+  outline: 2px solid #ffffff;
+
+  outline-offset: 4px;
+}
+
+/* Selection */
+
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+
+  color: #fff;
+}
+
+/* Reduce motion for users who prefer it */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+
+    transition: none !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Slight card glow */
+
+.program-card {
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Premium hover glow */
+
+.program-card:hover {
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.55),
+    0 0 25px rgba(255, 255, 255, 0.04);
+}
+
+/* Rounded image corners */
+
+.program-image img {
+  border-radius: 0 22px 22px 0;
+}
+
+@media (max-width: 900px) {
+  .program-image img {
+    border-radius: 0 0 20px 20px;
   }
 }

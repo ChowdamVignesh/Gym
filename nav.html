@@ -3,22 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nav bar</title>
+
+    <title>YVR Gym | Navigation</title>
+
     <link rel="stylesheet" href="nav.css" />
   </head>
+
   <body>
-    <div class="logo">YVR Gym</div>
+    <!-- ===========================
+            PREMIUM NAVBAR
+    ============================ -->
 
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">☰</div>
+    <header id="nav_section">
+      <nav class="navbar">
+        <!-- Logo -->
+        <a href="../index.html" class="logo">
+          <span class="logo-text">YVR</span>
+          <span class="logo-highlight">Gym</span>
+        </a>
 
-    <div class="home_btn" id="navLinks">
-      <a href="../index.html">Home</a>
-      <a href="../About_Section/about.html">About</a>
-      <a href="../Programs/program.html">Programs</a>
-      <a href="../index.html#membership_section">Membership</a>
-      <a href="../Trainers/trainers.html">Trainers</a>
-      <a href="../contact/contact.html">Contact</a>
-    </div>
+        <!-- Navigation Links -->
+        <div class="home_btn" id="navLinks">
+          <a href="../index.html" class="nav-link active"> Home </a>
+
+          <a href="../About_Section/about.html" class="nav-link"> About </a>
+
+          <a href="../Programs/program.html" class="nav-link"> Programs </a>
+
+          <a href="../index.html#membership_section" class="nav-link">
+            Membership
+          </a>
+
+          <a href="../Trainers/trainers.html" class="nav-link"> Trainers </a>
+          <a href="../BMI/bmi.html" class="nav-link"> BMI</a>
+          <a href="../contact/contact.html" class="nav-link"> Contact </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          onclick="toggleMenu()"
+          aria-label="Toggle Navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
     <script src="nav.js"></script>
   </body>
 </html>

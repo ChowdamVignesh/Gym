@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Health Report</title>
+    <link rel="stylesheet" href="bmi.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>BMI Health Report</h1>
+      <div class="form">
+        <div class="input-box">
+          <label>Name</label>
+          <input type="text" id="name" />
+        </div>
+
+        <div class="input-box">
+          <label>Age</label>
+          <input type="number" id="age" />
+        </div>
+
+        <div class="input-box">
+          <label>Gender</label>
+          <select id="gender">
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <label>Height (cm)</label>
+          <input type="number" id="height" />
+        </div>
+
+        <div class="input-box">
+          <label>Weight (kg)</label>
+          <input type="number" id="weight" />
+        </div>
+
+        <button onclick="calculateBMI()">Generate Report</button>
+      </div>
+      <div class="report premium-report" id="report">
+        <!--=========================
+            REPORT HEADER
+    ==========================-->
+        <div class="report-header">
+          <div class="hospital-logo">
+            <div class="logo-circle">❤️</div>
+          </div>
+
+          <div class="header-text">
+            <h2>Comprehensive BMI Health Assessment</h2>
+
+            <p>Personalized Wellness & Health Report</p>
+          </div>
+        </div>
+
+        <!--=========================
+          PATIENT INFORMATION
+    ==========================-->
+
+        <div class="report-section">
+          <h3>Patient Information</h3>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <span>Name</span>
+
+              <h4 id="rName">-</h4>
+            </div>
+
+            <div class="info-card">
+              <span>Age</span>
+
+              <h4 id="rAge">-</h4>
+            </div>
+
+            <div class="info-card">
+              <span>Gender</span>
+
+              <h4 id="rGender">-</h4>
+            </div>
+
+            <div class="info-card">
+              <span>Height</span>
+              <h4 id="rHeight">-</h4>
+            </div>
+
+            <div class="info-card">
+              <span>Weight</span>
+              <h4 id="rWeight">-</h4>
+            </div>
+          </div>
+        </div>
+
+        <!--=========================
+             BMI GAUGE
+    ==========================-->
+
+        <div class="report-section">
+          <h3>Body Mass Index</h3>
+
+          <div class="gauge-wrapper">
+            <div class="bmi-gauge">
+              <svg width="240" height="240">
+                <circle cx="120" cy="120" r="95" class="gauge-bg"></circle>
+
+                <circle
+                  cx="120"
+                  cy="120"
+                  r="95"
+                  class="gauge-progress"
+                  id="gaugeProgress"
+                ></circle>
+              </svg>
+
+              <div class="gauge-center">
+                <h1 id="rBMI">0</h1>
+
+                <span>BMI</span>
+
+                <p id="rCategory">Normal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--=========================
+       BODY FAT + FITNESS SCORE
+    ==========================-->
+
+        <div class="report-section">
+          <div class="dual-layout">
+            <!-- Body Fat -->
+
+            <div class="metric-card">
+              <h3>Estimated Body Fat</h3>
+
+              <h2 id="rBodyFat">0%</h2>
+
+              <div class="progress">
+                <div class="progress-fill" id="bodyFatBar"></div>
+              </div>
+
+              <p id="bodyFatStatus">Healthy Range</p>
+            </div>
+
+            <!-- Fitness -->
+
+            <div class="metric-card">
+              <h3>Fitness Score</h3>
+
+              <div class="fitness-circle">
+                <svg width="180" height="180">
+                  <circle cx="90" cy="90" r="70" class="fitness-bg"></circle>
+
+                  <circle
+                    cx="90"
+                    cy="90"
+                    r="70"
+                    class="fitness-progress"
+                    id="fitnessProgress"
+                  ></circle>
+                </svg>
+
+                <div class="fitness-text">
+                  <h2 id="rFitness">90</h2>
+
+                  <span>/100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--=========================
+          HEALTH RISK BADGE
+    ==========================-->
+
+        <div class="report-section">
+          <h3>Health Risk Assessment</h3>
+
+          <div class="risk-badge" id="riskBadge">
+            <span id="rRisk"> Low Risk </span>
+          </div>
+        </div>
+
+        <!--=========================
+         WHO BMI TABLE
+    ==========================-->
+
+        <div class="report-section">
+          <h3>WHO BMI Classification</h3>
+
+          <table class="bmi-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+
+                <th>BMI</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="underweightRow">
+                <td>Underweight</td>
+
+                <td>&lt;18.5</td>
+              </tr>
+
+              <tr id="normalRow">
+                <td>Normal</td>
+
+                <td>18.5–24.9</td>
+              </tr>
+
+              <tr id="overweightRow">
+                <td>Overweight</td>
+
+                <td>25–29.9</td>
+              </tr>
+
+              <tr id="obese1Row">
+                <td>Obesity I</td>
+
+                <td>30–34.9</td>
+              </tr>
+
+              <tr id="obese2Row">
+                <td>Obesity II</td>
+
+                <td>35–39.9</td>
+              </tr>
+
+              <tr id="obese3Row">
+                <td>Obesity III</td>
+
+                <td>40+</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!--=========================
+          BODY COMPOSITION
+    ==========================-->
+
+        <div class="report-section">
+          <h3>Body Composition</h3>
+
+          <div class="metrics-grid">
+            <div class="metric">
+              <span>Lean Body Mass</span>
+
+              <h4 id="rLeanMass">-</h4>
+            </div>
+
+            <div class="metric">
+              <span>Fat Mass</span>
+
+              <h4 id="rFatMass">-</h4>
+            </div>
+
+            <div class="metric">
+              <span>Ideal Weight</span>
+
+              <h4 id="rIdealWeight">-</h4>
+            </div>
+
+            <div class="metric">
+              <span>Healthy Weight</span>
+
+              <h4 id="rWeightRange">-</h4>
+            </div>
+          </div>
+        </div>
+
+        <!--=========================
+           METABOLIC INFORMATION
+        ==========================-->
+
+        <div class="report-section">
+          <h3>Metabolic Information</h3>
+
+          <div class="metrics-grid">
+            <div class="metric">
+              <span>BMR</span>
+
+              <h4 id="rBMR">-</h4>
+            </div>
+
+            <div class="metric">
+              <span>Calories</span>
+
+              <h4 id="rCalories">-</h4>
+            </div>
+
+            <div class="metric">
+              <span>Water Intake</span>
+
+              <h4 id="rWater">-</h4>
+            </div>
+
+            <div class="metric">
+              <span>Protein</span>
+
+              <h4 id="rProtein">-</h4>
+            </div>
+
+            <div class="metric">
+              <span>Body Surface Area</span>
+
+              <h4 id="rBSA">-</h4>
+            </div>
+
+            <div class="metric">
+              <span>Metabolic Age</span>
+
+              <h4 id="rMetabolicAge">-</h4>
+            </div>
+
+            <div class="metric">
+              <span>Estimated Body Age</span>
+
+              <h4 id="rBodyAge">-</h4>
+            </div>
+          </div>
+        </div>
+
+        <!--=========================
+       HEALTH RECOMMENDATION
+    ==========================-->
+
+        <div class="report-section">
+          <h3>Health Recommendation</h3>
+
+          <div class="advice-box">
+            <p id="rAdvice">Maintain a healthy lifestyle.</p>
+          </div>
+        </div>
+      </div>
+
+      <!--=========================================
+            PREMIUM HEALTH CHARTS
+      ==========================================-->
+
+      <div class="charts-section">
+        <div class="section-title">
+          <h2>
+            <i class="fa-solid fa-chart-pie"></i>
+            Health Analytics Dashboard
+          </h2>
+          <p>Interactive visual representation of your health assessment</p>
+        </div>
+
+        <div class="charts-grid">
+          <!--==============================
+                BMI CHART
+        ===============================-->
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <h3>BMI Visualization</h3>
+
+                <span>Body Mass Index Analysis</span>
+              </div>
+
+              <div class="chart-icon">📊</div>
+            </div>
+
+            <div class="chart-body">
+              <canvas id="bmiChart"></canvas>
+            </div>
+          </div>
+
+          <!--==============================
+          WEIGHT COMPARISON
+        ===============================-->
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <div>
+                <h3>Weight Comparison</h3>
+
+                <span>Current vs Healthy Weight</span>
+              </div>
+
+              <div class="chart-container">
+                <canvas id="weightComparisonChart"></canvas>
+              </div>
+
+              <div class="chart-icon">⚖️</div>
+            </div>
+
+            <div class="chart-body">
+              <canvas id="weightChart"></canvas>
+            </div>
+          </div>
+          
+
+          <!--==============================
+           CALORIE BREAKDOWN
+        ===============================-->
+
+          <div class="chart-card chart-full">
+            <div class="chart-header">
+              <div>
+                <h3>Daily Calorie Breakdown</h3>
+
+                <span> Estimated calorie requirements by activity level </span>
+              </div>
+
+              <div class="chart-icon">🔥</div>
+            </div>
+
+            <div class="chart-body">
+              <div class="chart-loader">
+                <div class="loader-circle"></div>
+              </div>
+              <canvas id="calorieChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="pdf-btn" onclick="downloadPDF()">
+        Download PDF Report
+      </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="bmi.js"></script>
+  </body>
+</html>

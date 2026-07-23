@@ -3,217 +3,1083 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | YVR GYM</title>
+
+    <title>About | YVR GYM</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="about.css" />
     <link rel="stylesheet" href="../nav.css" />
   </head>
+
   <body>
-    <!-- navbar-section -->
+    <!--==========================
+        NAVBAR
+===========================-->
+
     <nav id="nav_section"></nav>
-    <section class="introduction">
-      <div class="video-overlay"></div>
-      <video
-        src="/images/aboutImg/vecteezy_muscular-man-doing-exercise-with-barbell-4k-animation_8954617.mp4"
-        autoplay
-        muted
-        loop
-        playsinline
-      ></video>
 
-      <div class="intro-content">
-        <h3>YVR GYM</h3>
-        <p class="lead-text">
-          At YVR GYM, we combine elite coaching with a supportive community to
-          help you break through plateaus and build sustainable habits. Whether
-          you are stepping onto the gym floor for the first time or training for
-          a competition, we provide the blueprint for your success.
-        </p>
+    <!--==========================
+        HERO SECTION
+===========================-->
 
-        <div class="info-highlights">
-          <div class="highlight-item">
-            <strong>Experience:</strong> Over 10 years of transforming lives and
-            building healthier communities.
+    <section class="hero">
+      <!-- Background Video -->
+
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="/images/aboutImg/gym.mp4" type="video/mp4" />
+      </video>
+
+      <!-- Dark Overlay -->
+
+      <div class="hero-overlay"></div>
+
+      <!-- Floating Circles -->
+
+      <div class="circle circle1"></div>
+
+      <div class="circle circle2"></div>
+
+      <div class="circle circle3"></div>
+
+      <div class="hero-container">
+        <!-- LEFT CONTENT -->
+
+        <div class="hero-left">
+          <span class="gym-tag"> PREMIUM FITNESS CENTER </span>
+
+          <h1>
+            TRANSFORM YOUR
+
+            <span>BODY</span>
+
+            <br />
+
+            TRANSFORM YOUR
+
+            <span>LIFE</span>
+          </h1>
+
+          <p>
+            At YVR GYM, fitness is more than lifting weights. We help you become
+            stronger physically, mentally and emotionally through elite
+            coaching, advanced equipment and an inspiring community.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary"> Join Now </a>
+
+            <a href="#about" class="btn btn-secondary"> Explore </a>
           </div>
 
-          <div class="services-wrapper">
-            <strong>Main Services:</strong>
-            <ul class="services-list">
-              <li>
-                <span>Custom Strength Training:</span> Tailored periodization
-                plans for muscle growth and fat loss.
-              </li>
-              <li>
-                <span>High-Intensity Group Fitness:</span> Energetic, coach-led
-                cardio and functional tracks.
-              </li>
-              <li>
-                <span>1-on-1 Nutrition Coaching:</span> Data-driven meal
-                planning and habit tracking.
-              </li>
-              <li>
-                <span>Recovery Suite:</span> Access to infrared saunas and
-                compression therapy for optimal healing.
-              </li>
+          <!-- Statistics -->
+
+          <div class="hero-stats">
+            <div>
+              <h2 class="counter" data-target="5000">0</h2>
+
+              <span>Members</span>
+            </div>
+
+            <div>
+              <h2 class="counter" data-target="50">0</h2>
+
+              <span>Expert Trainers</span>
+            </div>
+
+            <div>
+              <h2 class="counter" data-target="10">0</h2>
+
+              <span>Years Experience</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT GLASS CARD -->
+
+        <div class="hero-right">
+          <div class="glass-card">
+            <h2>WHY YVR GYM?</h2>
+
+            <ul>
+              <li>✔ Certified Personal Trainers</li>
+
+              <li>✔ Strength & Muscle Building</li>
+
+              <li>✔ Weight Loss Programs</li>
+
+              <li>✔ Cardio & Functional Training</li>
+
+              <li>✔ Nutrition Guidance</li>
+
+              <li>✔ Recovery & Wellness</li>
             </ul>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="mission-vision">
-      <div class="card">
-        <h3>🏋️‍♂️ Our Mission</h3>
-        <p>
-          Our mission is the heartbeat of our gym. It means that from the moment
-          you step onto the floor, you have access to top-tier coaching,
-          cutting-edge equipment, and a pristine environment designed entirely
-          around your success. We don't just provide a place to workout; we
-          provide the tools, knowledge, and support to make transformation
-          possible today.
-        </p>
-      </div>
+      <!-- Scroll Indicator -->
 
-      <div class="card">
-        <h3>🚀 Our Vision</h3>
-        <p>
-          Our vision is our north star. We look beyond just being a building
-          filled with iron; we aim to build a lasting culture. We are working
-          toward a future where our name is synonymous with integrity,
-          inclusivity, and genuine life-changing results—creating a thriving
-          community where every member feels supported, valued, and inspired for
-          years to come.
-        </p>
+      <div class="scroll-down">
+        <span></span>
       </div>
     </section>
+
+    <!--==========================
+        ABOUT SECTION
+===========================-->
+
+    <section id="about" class="about">
+      <div class="section-heading">
+        <h5>ABOUT YVR GYM</h5>
+
+        <h2>WHERE PASSION MEETS PERFORMANCE</h2>
+      </div>
+
+      <div class="about-wrapper">
+        <!-- IMAGE -->
+
+        <div class="about-image">
+          <img src="/images/aboutImg/vignesh.png" alt="Gym" />
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="about-content">
+          <h3>More Than A Gym, A Lifestyle.</h3>
+
+          <p>
+            At YVR GYM we believe fitness changes lives. Whether you're a
+            beginner or an experienced athlete, our mission is to help every
+            member unlock their full potential.
+          </p>
+
+          <p>
+            With modern equipment, certified trainers, personalized workout
+            plans and a motivating environment, we create a fitness experience
+            unlike any other.
+          </p>
+
+          <div class="about-features">
+            <div class="feature-box">
+              💪
+
+              <span> Elite Equipment </span>
+            </div>
+
+            <div class="feature-box">
+              🥗
+
+              <span> Nutrition Coaching </span>
+            </div>
+
+            <div class="feature-box">
+              🏋️
+
+              <span> Strength Training </span>
+            </div>
+
+            <div class="feature-box">
+              ❤️
+
+              <span> Healthy Lifestyle </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================
+      MISSION & VISION
+===========================-->
+
+    <section class="mission-section">
+      <div class="section-heading">
+        <h5>OUR PURPOSE</h5>
+
+        <h2>BUILDING A STRONGER FUTURE</h2>
+      </div>
+
+      <div class="mission-container">
+        <!-- Mission -->
+
+        <div class="mission-card">
+          <div class="mission-icon">🏋️</div>
+
+          <h3>Our Mission</h3>
+
+          <p>
+            Our mission is to inspire people to embrace fitness by providing
+            world-class coaching, premium equipment and a welcoming atmosphere.
+            Every workout brings you closer to your best self.
+          </p>
+        </div>
+
+        <!-- Vision -->
+
+        <div class="mission-card">
+          <div class="mission-icon">🚀</div>
+
+          <h3>Our Vision</h3>
+
+          <p>
+            To become one of India's most trusted fitness communities where
+            every member enjoys transformation, confidence and lifelong health.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+                ACHIEVEMENTS SECTION
+====================================================== -->
 
     <section class="achievements">
-      <h3 class="section-title">By the Numbers</h3>
-      <div class="achievements-grid">
-        <div class="stat-card">
-          <div class="stat-icon">👥</div>
-          <div class="stat-number">5000+</div>
-          <div class="stat-label">Active Members</div>
+      <div class="section-heading">
+        <h5>OUR ACHIEVEMENTS</h5>
+        <h2>NUMBERS THAT SPEAK SUCCESS</h2>
+        <p>
+          Every milestone represents thousands of success stories, stronger
+          bodies, healthier lifestyles, and a growing fitness family.
+        </p>
+      </div>
+
+      <div class="achievement-container">
+        <!-- Card 1 -->
+
+        <div class="achievement-card">
+          <div class="achievement-icon">💪</div>
+
+          <h2 class="counter" data-target="5000">0</h2>
+
+          <h4>Active Members</h4>
+
+          <p>
+            Thousands of fitness enthusiasts trust YVR Gym to transform their
+            lives every day.
+          </p>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon">💪</div>
-          <div class="stat-number">50+</div>
-          <div class="stat-label">Expert Trainers</div>
+
+        <!-- Card 2 -->
+
+        <div class="achievement-card">
+          <div class="achievement-icon">🏆</div>
+
+          <h2 class="counter" data-target="50">0</h2>
+
+          <h4>Expert Trainers</h4>
+
+          <p>
+            Certified professionals helping members achieve safe and effective
+            fitness goals.
+          </p>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon">🏆</div>
-          <div class="stat-number">15</div>
-          <div class="stat-label">Fitness Awards</div>
+
+        <!-- Card 3 -->
+
+        <div class="achievement-card">
+          <div class="achievement-icon">🥇</div>
+
+          <h2 class="counter" data-target="15">0</h2>
+
+          <h4>Fitness Awards</h4>
+
+          <p>
+            Recognized for excellence in training, customer satisfaction and
+            innovation.
+          </p>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon">⏳</div>
-          <div class="stat-number">10+</div>
-          <div class="stat-label">Years Experience</div>
+
+        <!-- Card 4 -->
+
+        <div class="achievement-card">
+          <div class="achievement-icon">⏳</div>
+
+          <h2 class="counter" data-target="10">0</h2>
+
+          <h4>Years Experience</h4>
+
+          <p>A decade of transforming beginners into champions.</p>
         </div>
       </div>
     </section>
 
-    <section class="team">
-      <h3 class="section-title">Meet Our Elite Elite Coaches</h3>
-      <p class="section-subtitle">
-        Our certified experts are dedicated to accelerating your growth safely
-        and effectively.
-      </p>
+    <!-- =====================================================
+                WHY CHOOSE US
+====================================================== -->
 
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="trainer-img-container">
-            <img src="/images/aboutImg/yuji.jpg" alt="Yujiro itadori" />
+    <section class="choose-us">
+      <div class="section-heading">
+        <h5>WHY CHOOSE US</h5>
+
+        <h2>YOUR FITNESS. OUR PASSION.</h2>
+
+        <p>
+          We combine expert coaching, advanced equipment, and personalized
+          support to deliver the ultimate fitness experience.
+        </p>
+      </div>
+
+      <div class="choose-container">
+        <!-- Card -->
+
+        <div class="choose-card">
+          <div class="choose-icon">🏋️</div>
+
+          <h3>Modern Equipment</h3>
+
+          <p>
+            International-quality machines for strength, cardio and functional
+            workouts.
+          </p>
+        </div>
+
+        <div class="choose-card">
+          <div class="choose-icon">👨‍🏫</div>
+
+          <h3>Certified Trainers</h3>
+
+          <p>
+            Experienced professionals who guide every workout safely and
+            effectively.
+          </p>
+        </div>
+
+        <div class="choose-card">
+          <div class="choose-icon">🥗</div>
+
+          <h3>Nutrition Guidance</h3>
+
+          <p>
+            Customized diet plans to support muscle gain, fat loss and wellness.
+          </p>
+        </div>
+
+        <div class="choose-card">
+          <div class="choose-icon">❤️</div>
+
+          <h3>Friendly Community</h3>
+
+          <p>
+            Stay motivated with a supportive environment and positive culture.
+          </p>
+        </div>
+
+        <div class="choose-card">
+          <div class="choose-icon">⏰</div>
+
+          <h3>Flexible Timings</h3>
+
+          <p>
+            Workout according to your schedule with convenient opening hours.
+          </p>
+        </div>
+
+        <div class="choose-card">
+          <div class="choose-icon">🔥</div>
+
+          <h3>Personalized Programs</h3>
+
+          <p>
+            Workout plans designed specifically for your body and fitness goals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+                TRAINERS
+====================================================== -->
+
+    <section class="trainers">
+      <div class="section-heading">
+        <h5>MEET OUR COACHES</h5>
+
+        <h2>ELITE FITNESS EXPERTS</h2>
+
+        <p>
+          Dedicated professionals committed to helping you achieve extraordinary
+          results.
+        </p>
+      </div>
+
+      <div class="trainer-container">
+        <!-- Trainer 1 -->
+
+        <div class="trainer-card">
+          <div class="trainer-image">
+            <img src="/images/aboutImg/yuji.jpg" alt="Head Trainer" />
+
+            <div class="trainer-overlay">
+              <div class="social-icons">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
           </div>
+
           <div class="trainer-info">
-            <h4>Yujiro itadori</h4>
-            <p class="trainer-role">Head Fitness Coach</p>
-            <span class="trainer-exp">⚡ 5 Years Experience</span>
+            <h3>Yuji Itadori</h3>
+
+            <span> Head Fitness Coach </span>
+
+            <p>Strength Training • Muscle Building • Functional Fitness</p>
+
+            <div class="trainer-details">
+              <div>⭐ 4.9</div>
+
+              <div>💪 8 Years</div>
+            </div>
+
+            <a href="#" class="trainer-btn"> Book Trainer </a>
           </div>
         </div>
 
-        <div class="team-card">
-          <div class="trainer-img-container">
-            <img src="/images/aboutImg/naruto.webp" alt="Naruto Uzamaki" />
+        <!-- Trainer 2 -->
+
+        <div class="trainer-card">
+          <div class="trainer-image">
+            <img src="/images/aboutImg/naruto.webp" alt="Strength Trainer" />
+
+            <div class="trainer-overlay">
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
           </div>
+
           <div class="trainer-info">
-            <h4>Naruto Uzamaki</h4>
-            <p class="trainer-role">Strength & Conditioning Specialist</p>
-            <span class="trainer-exp">⚡ 7 Years Experience</span>
+            <h3>Naruto Uzumaki</h3>
+
+            <span> Strength Coach </span>
+
+            <p>Bodybuilding • Weight Loss • CrossFit</p>
+
+            <div class="trainer-details">
+              <div>⭐ 4.8</div>
+
+              <div>💪 7 Years</div>
+            </div>
+
+            <a href="#" class="trainer-btn"> Book Trainer </a>
           </div>
         </div>
 
-        <div class="team-card">
-          <div class="trainer-img-container">
-            <img src="/images/aboutImg/nobita.jpg" alt="Nobi Nobita" />
+        <!-- Trainer 3 -->
+
+        <div class="trainer-card">
+          <div class="trainer-image">
+            <img src="/images/aboutImg/nobita.jpg" alt="Nutrition Expert" />
+
+            <div class="trainer-overlay">
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
           </div>
+
           <div class="trainer-info">
-            <h4>Nobi Nobita</h4>
-            <p class="trainer-role">Nutrition & Weight Management Expert</p>
-            <span class="trainer-exp">⚡ 6 Years Experience</span>
+            <h3>Nobi Nobita</h3>
+
+            <span> Nutrition Expert </span>
+
+            <p>Nutrition • Fat Loss • Lifestyle Coaching</p>
+
+            <div class="trainer-details">
+              <div>⭐ 5.0</div>
+
+              <div>💪 6 Years</div>
+            </div>
+
+            <a href="#" class="trainer-btn"> Book Trainer </a>
           </div>
         </div>
       </div>
     </section>
+    <!-- ============================================
+            OUR JOURNEY / TIMELINE
+============================================= -->
 
     <section class="journey">
-      <h3 class="section-title">Our Journey: From a Dream to a Community</h3>
+      <div class="section-heading">
+        <h5>OUR JOURNEY</h5>
+
+        <h2>FROM A SMALL DREAM TO A FITNESS FAMILY</h2>
+
+        <p>
+          Every milestone reflects our commitment to inspiring healthier,
+          stronger, and happier lives. From humble beginnings to becoming a
+          trusted fitness destination, our journey continues with our incredible
+          members.
+        </p>
+      </div>
 
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">2018</div>
+        <!-- Timeline Item 1 -->
+
+        <div class="timeline-item left">
           <div class="timeline-content">
-            <h4>The Foundation & The Spark</h4>
+            <span class="timeline-year"> 2018 </span>
+
+            <h3>The Beginning</h3>
+
             <p>
-              The gym was officially founded with a simple goal: to make elite
-              coaching accessible to everyone. We started in a small, humble
-              garage space with just a few dedicated lifting racks and a
-              passionate community of founding members.
+              YVR Gym started with a vision to create a premium fitness
+              environment where everyone could achieve their dream body. With
+              just a few machines and passionate trainers, we welcomed our very
+              first members.
             </p>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">2020</div>
+        <!-- Timeline Item 2 -->
+
+        <div class="timeline-item right">
           <div class="timeline-content">
-            <h4>A Growing Community</h4>
+            <span class="timeline-year"> 2019 </span>
+
+            <h3>Growing Community</h3>
+
             <p>
-              Despite challenges, our community thrived. We officially crossed
-              the milestone of helping over 1,000 active members transform their
-              health, turning a local fitness spot into a true movement.
+              Within a year, our family expanded rapidly. Hundreds of members
+              trusted us to guide their fitness transformation.
             </p>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">2022</div>
+        <!-- Timeline Item 3 -->
+
+        <div class="timeline-item left">
           <div class="timeline-content">
-            <h4>Expanding the Horizon</h4>
+            <span class="timeline-year"> 2020 </span>
+
+            <h3>New Equipment</h3>
+
             <p>
-              To accommodate our growing family, we opened the doors to our
-              second, state-of-the-art facility. This expansion brought in
-              advanced modern equipment and dedicated spaces for group classes.
+              We upgraded our facility with imported commercial-grade equipment,
+              offering world-class strength and cardio training.
             </p>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">2025</div>
+        <!-- Timeline Item 4 -->
+
+        <div class="timeline-item right">
           <div class="timeline-content">
-            <h4>Recognized Excellence</h4>
+            <span class="timeline-year"> 2021 </span>
+
+            <h3>Certified Trainers</h3>
+
             <p>
-              Thanks to the hard work of our trainers and the dedication of our
-              members, we were officially honored with the "Best Fitness Center"
-              award, cementing our place as a trusted regional leader in health
-              and wellness.
+              Our coaching team expanded with certified trainers specializing in
+              bodybuilding, powerlifting, CrossFit, nutrition, rehabilitation
+              and transformation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 5 -->
+
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <span class="timeline-year"> 2022 </span>
+
+            <h3>1000+ Members</h3>
+
+            <p>
+              Our community crossed one thousand active members and celebrated
+              hundreds of successful transformations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 6 -->
+
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <span class="timeline-year"> 2023 </span>
+
+            <h3>Group Training</h3>
+
+            <p>
+              Introduced Yoga, HIIT, Cardio Blast, Functional Training, CrossFit
+              and Personal Coaching sessions for all fitness levels.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 7 -->
+
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <span class="timeline-year"> 2024 </span>
+
+            <h3>Award Winning Gym</h3>
+
+            <p>
+              Recognized for outstanding customer satisfaction and premium
+              fitness services, becoming one of the region's most trusted gyms.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline Item 8 -->
+
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <span class="timeline-year"> 2025 </span>
+
+            <h3>The Future Starts Here</h3>
+
+            <p>
+              Today YVR Gym continues inspiring thousands of people with
+              cutting-edge equipment, experienced coaches, personalized training
+              programs, and a passionate fitness community.
             </p>
           </div>
         </div>
       </div>
     </section>
+    <!-- ==========================================
+            TESTIMONIALS SECTION
+=========================================== -->
+
+    <section class="testimonials">
+      <div class="section-heading">
+        <h5>SUCCESS STORIES</h5>
+
+        <h2>WHAT OUR MEMBERS SAY</h2>
+
+        <p>
+          Real transformations. Real experiences. Hear from our amazing fitness
+          family.
+        </p>
+      </div>
+
+      <div class="testimonial-slider">
+        <!-- Testimonial 1 -->
+
+        <div class="testimonial-card active">
+          <div class="quote">❝</div>
+
+          <p>
+            Joining YVR Gym completely changed my lifestyle. The trainers are
+            incredibly supportive and the environment motivates me every single
+            day.
+          </p>
+
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+
+          <div class="member">
+            <img src="/images/aboutImg/nobita.jpg" alt="Member" />
+
+            <div>
+              <h3>Rahul Kumar</h3>
+
+              <span>Lost 18 KG</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+
+        <div class="testimonial-card">
+          <div class="quote">❝</div>
+
+          <p>
+            The personalized workout plan helped me gain muscle naturally. Every
+            trainer genuinely cares about your progress.
+          </p>
+
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+
+          <div class="member">
+            <img src="/images/aboutImg/naruto.webp" alt="Member" />
+
+            <div>
+              <h3>Priya Sharma</h3>
+
+              <span>Muscle Gain</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+
+        <div class="testimonial-card">
+          <div class="quote">❝</div>
+
+          <p>
+            Amazing equipment, friendly atmosphere, and world-class coaching.
+            Highly recommended for beginners and professionals.
+          </p>
+
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+
+          <div class="member">
+            <img src="/images/aboutImg/yuji.jpg" alt="Member" />
+
+            <div>
+              <h3>Arjun Reddy</h3>
+
+              <span>Body Transformation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Navigation -->
+
+      <div class="testimonial-controls">
+        <button id="prevTestimonial">❮</button>
+
+        <button id="nextTestimonial">❯</button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+                GALLERY SECTION
+=========================================== -->
+
+    <section class="gallery">
+      <div class="section-heading">
+        <h5>OUR GALLERY</h5>
+
+        <h2>INSIDE YVR GYM</h2>
+
+        <p>
+          Explore our premium training environment, state-of-the-art equipment
+          and inspiring fitness community.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="/images/programImg/Strength_Training.webp" alt="Gym" />
+
+          <div class="gallery-overlay">
+            <h3>Strength Zone</h3>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/images/programImg/Cardio_Training.jpeg" alt="Gym" />
+
+          <div class="gallery-overlay">
+            <h3>Cardio Area</h3>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/images/programImg/CrossFit.avif" alt="Gym" />
+
+          <div class="gallery-overlay">
+            <h3>CrossFit</h3>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/images/programImg/Weight_Training.jpg" alt="Gym" />
+
+          <div class="gallery-overlay">
+            <h3>Workout Session</h3>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/images/programImg/yoga.jpg" alt="Gym" />
+
+          <div class="gallery-overlay">
+            <h3>Yoga Training</h3>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/images/programImg/Yoga_Classes.jpg" alt="Gym" />
+
+          <div class="gallery-overlay">
+            <h3>Fitness Community</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======================================================
+                    FAQ SECTION
+====================================================== -->
+
+    <section class="faq">
+      <div class="section-heading">
+        <h5>FREQUENTLY ASKED QUESTIONS</h5>
+
+        <h2>WE'RE HERE TO HELP</h2>
+
+        <p>
+          Have questions? Here are the answers to some of the most common
+          questions asked by our members.
+        </p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item active">
+          <div class="faq-question">
+            <h3>Do you provide a free trial?</h3>
+
+            <span>+</span>
+          </div>
+
+          <div class="faq-answer">
+            <p>
+              Yes! We offer a one-day free trial so you can experience our
+              facilities, equipment, and trainers before joining.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Do you provide personal trainers?</h3>
+
+            <span>+</span>
+          </div>
+
+          <div class="faq-answer">
+            <p>
+              Absolutely. Our certified trainers create customized workout and
+              nutrition plans based on your goals.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is nutrition guidance included?</h3>
+
+            <span>+</span>
+          </div>
+
+          <div class="faq-answer">
+            <p>
+              Yes. Our nutrition experts help you build meal plans for muscle
+              gain, fat loss and healthy living.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What are the gym timings?</h3>
+
+            <span>+</span>
+          </div>
+
+          <div class="faq-answer">
+            <p>
+              We are open Monday to Saturday from 5:00 AM to 11:00 PM and Sunday
+              from 6:00 AM to 9:00 PM.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can beginners join?</h3>
+
+            <span>+</span>
+          </div>
+
+          <div class="faq-answer">
+            <p>
+              Definitely! We design beginner-friendly workout programs and guide
+              you step by step.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+                    CTA SECTION
+====================================================== -->
+
+    <section class="cta">
+      <div class="cta-content">
+        <h5>READY TO START?</h5>
+
+        <h2>TRANSFORM YOUR BODY TODAY</h2>
+
+        <p>
+          Stop waiting for tomorrow. Begin your fitness journey with YVR Gym and
+          become the strongest version of yourself.
+        </p>
+
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary"> Join Now </a>
+
+          <a href="../Membership/membership.html" class="btn btn-secondary">
+            View Membership
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+                    FOOTER
+====================================================== -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Logo -->
+
+        <div class="footer-box">
+          <h2>YVR GYM</h2>
+
+          <p>
+            More than a gym. We build confidence, discipline and healthier
+            lives.
+          </p>
+
+          <div class="footer-social">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#">
+              <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="../Trainers/trainers.html">Trainers</a></li>
+
+            <li><a href="../Membership/membership.html">Membership</a></li>
+
+            <li><a href="../Contact/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+
+        <div class="footer-box">
+          <h3>Our Services</h3>
+
+          <ul>
+            <li>Strength Training</li>
+
+            <li>Cardio Training</li>
+
+            <li>CrossFit</li>
+
+            <li>Yoga Classes</li>
+
+            <li>Nutrition Plans</li>
+
+            <li>Personal Training</li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+
+        <div class="footer-box">
+          <h3>Contact Us</h3>
+
+          <ul>
+            <li>📍 Kadapa, Andhra Pradesh</li>
+
+            <li>📞 +91 98765 43210</li>
+
+            <li>📧 info@yvrgym.com</li>
+
+            <li>🕒 Mon - Sat : 5AM - 11PM</li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+
+        <div class="footer-box">
+          <h3>Newsletter</h3>
+
+          <p>
+            Subscribe to receive fitness tips, workout plans and special offers.
+          </p>
+
+          <form class="newsletter">
+            <input type="email" placeholder="Enter your email" required />
+
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+
+      <div class="footer-bottom">
+        <p>
+          © 2026 YVR GYM | Designed with ❤️ by YVR Team | All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Font Awesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!--==========================
+      NAVBAR FETCH
+===========================-->
+    <script src="about.js"></script>
     <script>
       // Fetch and inject the navbar
       fetch("../nav.html")

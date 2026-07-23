@@ -3,128 +3,369 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meet Our Trainers</title>
+
+    <title>Elite Trainers | Fitness Elite</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="trainers.css" />
     <link rel="stylesheet" href="../nav.css" />
-    <!-- Font Awesome for Social Icons -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
+
   <body>
-    <!-- navbar-section -->
+    <!-- NAVBAR -->
     <nav id="nav_section"></nav>
-    <!-- Header Section -->
+
+    <!-- ===================================== -->
+    <!-- Premium Hero -->
+    <!-- ===================================== -->
+
     <header class="header-section">
-      <h1>Meet Our Trainers</h1>
+      <div class="hero-badge">
+        <i class="fa-solid fa-dumbbell"></i>
+        PROFESSIONAL FITNESS COACHES
+      </div>
+
+      <h1>Meet Our <span>Elite Trainers</span></h1>
+
       <p>
-        Our certified experts are here to help you reach your ultimate fitness
-        and health goals.
+        Train alongside certified fitness professionals dedicated to helping you
+        transform your body, improve your strength, and achieve long-term health
+        goals.
       </p>
+
+      <div class="hero-buttons">
+        <a href="#trainers" class="primary-btn">
+          Explore Trainers
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a href="../Membership_Section/membership.html" class="secondary-btn">
+          Join Membership
+        </a>
+      </div>
     </header>
 
-    <!-- Trainers Grid -->
-    <main class="trainers-grid">
-      <!-- Trainer Card 1 -->
+    <!-- ===================================== -->
+    <!-- Trainers -->
+    <!-- ===================================== -->
+
+    <main class="trainers-grid" id="trainers">
+      <!-- Trainer 1 -->
+
       <div class="trainer-card" onclick="openModal('trainer1')">
-        <img
-          src="/images/Trainers/yaswanth(1).png"
-          alt="Yaswanth"
-          class="trainer-img"
-        />
+        <div class="trainer-image">
+          <img
+            src="/images/Trainers/yaswanth(1).png"
+            alt="Yaswanth"
+            class="trainer-img"
+          />
+
+          <div class="trainer-overlay">
+            <span class="view-profile"> View Profile </span>
+          </div>
+
+          <div class="experience-badge">
+            <i class="fa-solid fa-award"></i>
+
+            30+ Years
+          </div>
+        </div>
+
         <div class="trainer-info">
+          <span class="trainer-tag"> Strength Coach </span>
+
           <h3>Yaswanth</h3>
+
           <p class="specialization">Strength & Conditioning</p>
-          <p class="experience"><strong>Experience:</strong>30 + 2 Years</p>
+
+          <!-- Rating -->
+
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+
+            <span>4.9</span>
+          </div>
+
+          <div class="card-footer">
+            <span class="experience">
+              <i class="fa-solid fa-briefcase"></i>
+
+              30+ Years Experience
+            </span>
+
+            <button class="card-btn">
+              View Details
+
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Trainer Card 2 -->
+      <!-- Trainer 2 -->
+
       <div class="trainer-card" onclick="openModal('trainer2')">
-        <img
-          src="/images/Trainers/Vignesh(1).png"
-          alt="Vignesh"
-          class="trainer-img"
-        />
+        <div class="trainer-image">
+          <img
+            src="/images/Trainers/Vignesh(1).png"
+            alt="Vignesh"
+            class="trainer-img"
+          />
+
+          <div class="trainer-overlay">
+            <span class="view-profile"> View Profile </span>
+          </div>
+
+          <div class="experience-badge">
+            <i class="fa-solid fa-fire"></i>
+
+            HIIT Expert
+          </div>
+        </div>
+
         <div class="trainer-info">
+          <span class="trainer-tag"> HIIT Trainer </span>
+
           <h3>Vignesh</h3>
-          <p class="specialization">High-Intensity Interval Training (HIIT)</p>
-          <p class="experience"><strong>Experience:</strong> 10 Years</p>
+
+          <p class="specialization">High-Intensity Interval Training</p>
+
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+
+            <span>4.8</span>
+          </div>
+
+          <div class="card-footer">
+            <span class="experience">
+              <i class="fa-solid fa-clock"></i>
+
+              10 Years Experience
+            </span>
+
+            <button class="card-btn">
+              View Details
+
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Trainer Card 3 -->
+      <!-- Trainer 3 -->
+
       <div class="trainer-card" onclick="openModal('trainer3')">
-        <img
-          src="/images/Trainers/rohith(2).png"
-          alt="Rohith"
-          class="trainer-img"
-        />
+        <div class="trainer-image">
+          <img
+            src="/images/Trainers/rohith(2).png"
+            alt="Rohith"
+            class="trainer-img"
+          />
+
+          <div class="trainer-overlay">
+            <span class="view-profile"> View Profile </span>
+          </div>
+
+          <div class="experience-badge">
+            <i class="fa-solid fa-heart-pulse"></i>
+
+            Zumba
+          </div>
+        </div>
+
         <div class="trainer-info">
+          <span class="trainer-tag"> Fitness Coach </span>
+
           <h3>Rohith</h3>
+
           <p class="specialization">Zumba Trainer</p>
-          <p class="experience"><strong>Experience:</strong> 9 Years</p>
+
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+
+            <span>4.8</span>
+          </div>
+
+          <div class="card-footer">
+            <span class="experience">
+              <i class="fa-solid fa-award"></i>
+
+              9 Years Experience
+            </span>
+
+            <button class="card-btn">
+              View Details
+
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Trainer Card 3 -->
+      <!-- Trainer 4 -->
+
       <div class="trainer-card" onclick="openModal('trainer4')">
-        <img
-          src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400"
-          alt="Marcus Chen"
-          class="trainer-img"
-        />
+        <div class="trainer-image">
+          <img
+            src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=700"
+            alt="Marcus"
+            class="trainer-img"
+          />
+
+          <div class="trainer-overlay">
+            <span class="view-profile"> View Profile </span>
+          </div>
+
+          <div class="experience-badge">
+            <i class="fa-solid fa-bolt"></i>
+
+            HIIT
+          </div>
+        </div>
+
         <div class="trainer-info">
+          <span class="trainer-tag"> Performance Coach </span>
+
           <h3>Marcus Chen</h3>
-          <p class="specialization">High-Intensity Interval Training (HIIT)</p>
-          <p class="experience"><strong>Experience:</strong> 5 Years</p>
+
+          <p class="specialization">HIIT Specialist</p>
+
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+
+            <span>4.9</span>
+          </div>
+
+          <div class="card-footer">
+            <span class="experience">
+              <i class="fa-solid fa-clock"></i>
+
+              5 Years Experience
+            </span>
+
+            <button class="card-btn">
+              View Details
+
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- Trainer Card 3 -->
+      <!-- Trainer 5 -->
+
       <div class="trainer-card" onclick="openModal('trainer5')">
-        <img
-          src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400"
-          alt="Marcus Chen"
-          class="trainer-img"
-        />
+        <div class="trainer-image">
+          <img
+            src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=700"
+            alt="Trainer"
+            class="trainer-img"
+          />
+
+          <div class="trainer-overlay">
+            <span class="view-profile"> View Profile </span>
+          </div>
+
+          <div class="experience-badge">
+            <i class="fa-solid fa-medal"></i>
+
+            Elite
+          </div>
+        </div>
+
         <div class="trainer-info">
+          <span class="trainer-tag"> Personal Coach </span>
+
           <h3>Marcus Chen</h3>
-          <p class="specialization">High-Intensity Interval Training (HIIT)</p>
-          <p class="experience"><strong>Experience:</strong> 5 Years</p>
+
+          <p class="specialization">Functional Strength Training</p>
+
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+
+            <span>5.0</span>
+          </div>
+
+          <div class="card-footer">
+            <span class="experience">
+              <i class="fa-solid fa-briefcase"></i>
+
+              5 Years Experience
+            </span>
+
+            <button class="card-btn">
+              View Details
+
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
         </div>
       </div>
     </main>
 
     <!-- Footer -->
+
     <footer>
-      <p>&copy; 2026 Fitness Elite. All rights reserved.</p>
+      <p>© 2026 Fitness Elite. All Rights Reserved.</p>
     </footer>
 
-    <!-- Pop-up Modal Container -->
+    <!-- Premium Modal -->
+
     <div id="trainerModal" class="modal">
       <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div id="modalDetails">
-          <!-- Data will be dynamically injected by JavaScript -->
-        </div>
+        <span class="close-btn" onclick="closeModal()"> &times; </span>
+
+        <div id="modalDetails"></div>
       </div>
     </div>
 
     <script src="trainers.js"></script>
+
     <script>
-      // Fetch and inject the navbar
       fetch("../nav.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("nav_section").innerHTML = data;
         });
 
-      // Your mobile menu toggle function
       function toggleMenu() {
         const navLinks = document.getElementById("navLinks");
-        // Because elements are injected dynamically, ensure the script finds them safely
+
         if (navLinks) {
           navLinks.classList.toggle("active");
         }
