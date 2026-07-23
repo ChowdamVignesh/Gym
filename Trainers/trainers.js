@@ -9,7 +9,7 @@
 const trainerData = {
   trainer1: {
     name: "Yaswanth",
-    image: "/images/Trainers/yaswanth(1).png",
+    image: "../images/Trainers/yaswanth(1).png",
     specialization: "Strength & Conditioning",
     experience: "30+ Years",
     certification: "NASM Certified Personal Trainer<br>CrossFit Level 2 Coach",
@@ -23,7 +23,7 @@ const trainerData = {
 
   trainer2: {
     name: "Vignesh",
-    image: "/images/Trainers/Vignesh(1).png",
+    image: "../images/Trainers/Vignesh(1).png",
     specialization: "HIIT Trainer",
     experience: "10 Years",
     certification:
@@ -38,7 +38,7 @@ const trainerData = {
 
   trainer3: {
     name: "Rohith",
-    image: "/images/Trainers/rohith(2).png",
+    image: "../images/Trainers/rohith(2).png",
     specialization: "Zumba Trainer",
     experience: "9 Years",
     certification: "500-Hour Registered Yoga Teacher<br>Pilates Certified",
